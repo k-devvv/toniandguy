@@ -1,3 +1,4 @@
+import { renderSimpleBooking, renderPrices } from "./booking-page.js";
 import {
   normalizePhone,
   preferredDays,
@@ -8,8 +9,8 @@ import {
 const CONFIG = {
   brand: "TONI&GUY",
   branded: true,
-  phone: { s: "", p: "" },
-  whatsapp: { s: "", p: "" },
+  phone: { s: "+918123729873", p: "+918123729873" },
+  whatsapp: { s: "918123729873", p: "918123729873" },
   hours: { s: "", p: "" },
   sampleVoices: false, // set to false at launch; real reviews replace the sample cards
 };
@@ -1791,7 +1792,7 @@ const NAV = [
 ];
 let curLoc = ["s", "p"].includes(store("loc")) ? store("loc") : "";
 function parseRoute() {
-  const h = (location.hash || "#home").slice(1);
+  const h = (location.hash || "#home").slice(1).split("?")[0];
   if (R[h]) return [h, null];
   const m = h.match(/^(service|colour|stylist|occasion)-(.+)$/);
   if (m && R[m[1]] && R[m[1]].ok(m[2])) return [m[1], m[2]];
@@ -2681,7 +2682,7 @@ async function loadRuntimeConfig() {
     runtime.loaded = true;
     runtime.bookingEnabled = false;
   }
-  if (parseRoute()[0] === "book" && S.book.step === 5) render();
+  if (parseRoute()[0] === "book") render();
 }
 function mountChallenge() {
   if (!window.turnstile || !$("#booking-bot")) return;
@@ -2690,249 +2691,36 @@ function mountChallenge() {
       window.turnstile.remove(turnstileWidget);
     } catch {}
   }
-  S.book.botToken = "";
+  const draft = S.book;
+  draft.botToken = "";
   turnstileWidget = window.turnstile.render("#booking-bot", {
     sitekey: runtime.turnstileSiteKey,
     action: "booking",
     callback: (token) => {
-      S.book.botToken = token;
+      if (S.book === draft) draft.botToken = token;
     },
     "expired-callback": () => {
-      S.book.botToken = "";
+      if (S.book === draft) draft.botToken = "";
     },
     "error-callback": () => {
-      S.book.botToken = "";
+      if (S.book === draft) draft.botToken = "";
       if ($("#err"))
         $("#err").textContent = "Security check failed. Please try again.";
     },
   });
 }
-const STEPS = [
-  "Salon",
-  "Occasion",
-  "Service",
-  "Specialist preference",
-  "Time",
-  "You",
-  "Done",
-];
-R.book = (app) => {
-  const Bk = S.book;
-  if (Bk.step == null) Bk.step = 0;
-  if (!Bk.loc && curLoc) Bk.loc = curLoc;
-  if (!Bk.loc) Bk.step = 0;
-  if (
-    Bk.svc &&
-    (!SMAP[Bk.svc] || (SMAP[Bk.svc].only && SMAP[Bk.svc].only !== Bk.loc))
-  ) {
-    delete Bk.svc;
-    delete Bk.sty;
-    Bk.step = Math.min(Bk.step, 2);
-  }
-  document.body.dataset.loc = Bk.loc || "";
-  const st = Bk.step;
-  let body = "",
-    can = true;
-  const opt = (arr, key) =>
-    `<div class="opts" role="group">${arr.map((o) => `<button class="chip" data-k="${key}" data-v="${esc(o[0])}" aria-pressed="${Bk[key] === o[0]}">${esc(o[1])}</button>`).join("")}</div>`;
-  if (st === 0) {
-    body = `<h2>Which salon?</h2>${opt(
-      [
-        ["s", "Sobha Arcadia"],
-        ["p", "Prestige Tech Forest"],
-      ],
-      "loc",
-    )}`;
-    can = !!Bk.loc;
-  }
-  if (st === 1) {
-    body = `<h2>What is the occasion?</h2>${opt([["", "No occasion"]].concat(OCC.map((o) => [o.id, o.t])), "occ")}`;
-    can = Bk.occ != null;
-  }
-  if (st === 2) {
-    const list = SVC.filter((s) => !s.only || s.only === Bk.loc);
-    body = `<h2>What would you like?</h2>${opt(
-      list.map((s) => [s.id, s.name]),
-      "svc",
-    )}${Bk.svc ? `<p class="mute">${esc(SMAP[Bk.svc].what)} <span class="small">(${esc(SMAP[Bk.svc].timeTxt)})</span></p>` : ""}`;
-    can = !!Bk.svc;
-  }
-  if (st === 3) {
-    const specialists = STY.filter(
-      (t) => t.id === SMAP[Bk.svc]?.stylist || t.id === "creative",
-    );
-    body = `<h2>Any specialist preference?</h2>${opt([["", "Let the salon recommend"]].concat(specialists.map((t) => [t.id, t.t])), "sty")}<p class="small mute">These are areas of expertise. The salon will confirm the assigned stylist and availability.</p>`;
-    can = Bk.sty != null;
-  }
-  if (st === 4) {
-    body = `<h2>When suits you?</h2>${opt(preferredDays(), "date")}<div style="margin-top:12px">${opt(
-      [
-        ["am", "Morning"],
-        ["noon", "Midday"],
-        ["pm", "Evening"],
-      ],
-      "win",
-    )}</div><p class="small mute">Dates use Bengaluru time. This is a preferred window, not a reserved appointment. The salon agrees the exact time with you.</p>`;
-    can = !!(Bk.date && Bk.win);
-  }
-  if (st === 5) {
-    body = `<h2>Last step.</h2><div class="grid g2"><div class="field"><label for="nm">Your name</label><input id="nm" maxlength="100" value="${esc(Bk.name || "")}" autocomplete="name"></div><div class="field"><label for="ph">WhatsApp number</label><input id="ph" type="tel" maxlength="20" value="${esc(Bk.phone || "")}" autocomplete="tel" placeholder="10 digits or +91"></div></div>
-    <div class="field"><label for="nt">Anything we should know? (optional)</label><textarea id="nt" maxlength="1000" rows="3" placeholder="Appointment preferences; avoid sharing sensitive medical details here">${esc(Bk.note || "")}</textarea></div>
-    <label class="consent"><input id="contact-consent" type="checkbox" ${Bk.contactConsent ? "checked" : ""}> I agree to be contacted about this appointment request. <a href="/privacy.html" target="_blank" rel="noopener">Privacy notice</a></label>
-    <div class="hp" aria-hidden="true"><label for="booking-website">Website</label><input id="booking-website" tabindex="-1" autocomplete="off"></div>
-    <div id="booking-bot"></div><p class="small mute">${runtime.loaded ? (runtime.bookingEnabled ? "Your details are used to manage your appointment request." : "Online requests are not available yet. Please check back shortly.") : "Checking booking availability…"}</p>
-    <p class="small" id="err" style="color:var(--bad)" role="alert"></p>`;
-    can = runtime.loaded && runtime.bookingEnabled;
-  }
-  if (st === 6) {
-    const L = LOC[Bk.loc],
-      service = SMAP[Bk.svc];
-    const text = `${B}, ${L.name}\nReference: ${Bk.reference}\n${service?.name || "Consultation"}\n${Bk.date} (${{ am: "morning", noon: "midday", pm: "evening" }[Bk.win]})\n${Bk.name}, ${Bk.phone}${Bk.note ? "\nNote: " + Bk.note : ""}`;
-    app.innerHTML = `<section class="blk" style="padding-top:clamp(110px,14vw,160px)"><div class="wrap bk-wrap stack" style="gap:26px"><div class="cap">Request received · Pending confirmation</div><h1 style="font-size:clamp(40px,6vw,84px)">Thank you, ${esc(Bk.name.split(" ")[0])}.</h1><p class="lead">Your request has been saved. The salon will contact you to agree an exact appointment time. Your preferred window is not yet confirmed.</p><div class="sum"><pre id="sumtxt" style="margin:0;font:inherit;white-space:pre-wrap">${esc(text)}</pre></div><div class="row"><button class="btn" id="cp">Copy summary</button><a class="btn sec" href="#visit" data-go="visit">Salon details</a><button class="btn sec" id="rs">New request</button></div></div></section>`;
-    $("#cp").addEventListener("click", async () => {
-      try {
-        await navigator.clipboard.writeText(text);
-        toast("Summary copied");
-      } catch {
-        toast("Copy is unavailable. Your reference is " + Bk.reference);
-      }
-    });
-    $("#rs").addEventListener("click", () => {
-      S.book = { step: 0 };
-      render();
-    });
-    return;
-  }
-  app.innerHTML = `<section class="blk" style="padding-top:clamp(110px,14vw,160px)"><div class="wrap bk-wrap"><div class="stepsbar" aria-label="Step ${st + 1} of 6">${STEPS.slice(
-    0,
-    6,
-  )
-    .map((_, i) => `<i class="${i <= st ? "on" : ""}"></i>`)
-    .join(
-      "",
-    )}</div><p class="cap" style="margin-bottom:14px">${STEPS[st]}${Bk.loc ? " · " + LOC[Bk.loc].name : ""}</p><div class="stack" style="gap:22px">${body}</div><div class="row" style="margin-top:34px">${st > 0 ? '<button class="btn sec sm" id="bb">Back</button>' : ""}<button class="btn" id="bn" ${can ? "" : "disabled"}>${st === 5 ? "Send request" : "Continue"}</button></div></div></section>`;
-  $$("[data-k]").forEach((b) =>
-    b.addEventListener("click", () => {
-      resetDependentChoices(Bk, b.dataset.k, b.dataset.v);
-      if (b.dataset.k === "loc") {
-        curLoc = Bk.loc;
-        store("loc", curLoc);
-      }
-      render();
-    }),
-  );
-  $("#bb")?.addEventListener("click", () => {
-    if (Bk.submitting) return;
-    Bk.step = Math.max(0, st - 1);
-    render();
+R.book = (app) =>
+  renderSimpleBooking(app, {
+    draft: S.book,
+    runtime,
+    mountChallenge,
+    rerender: () => R.book(app),
+    locations: LOC,
+    location: curLoc,
   });
-  if (st === 5) {
-    for (const [id, key] of [
-      ["nm", "name"],
-      ["ph", "phone"],
-      ["nt", "note"],
-    ])
-      $("#" + id).addEventListener("input", (e) => {
-        Bk[key] = e.target.value;
-      });
-    $("#contact-consent").addEventListener("change", (e) => {
-      Bk.contactConsent = e.target.checked;
-    });
-    mountChallenge();
-  }
-  $("#bn").addEventListener("click", async () => {
-    if (!can || Bk.submitting) return;
-    if (st !== 5) {
-      Bk.step = st + 1;
-      render();
-      return;
-    }
-    const err = $("#err"),
-      button = $("#bn"),
-      back = $("#bb");
-    Bk.name = $("#nm").value.trim();
-    Bk.phone = $("#ph").value.trim();
-    Bk.note = $("#nt").value.trim();
-    const phone = normalizePhone(Bk.phone);
-    if (Bk.name.length < 2) {
-      err.textContent = "Enter your name (at least two characters).";
-      return;
-    }
-    if (!phone) {
-      err.textContent =
-        "Enter a valid Indian mobile number: 10 digits starting with 6, 7, 8 or 9, optionally prefixed with +91.";
-      return;
-    }
-    if (!Bk.contactConsent) {
-      err.textContent = "Please agree to appointment contact before sending.";
-      return;
-    }
-    if (!Bk.botToken) {
-      err.textContent = "Please complete the security check before sending.";
-      return;
-    }
-    const payload = {
-      branchId: Bk.loc,
-      serviceId: Bk.svc,
-      stylistPreference: Bk.sty || "",
-      occasion: Bk.occ || "",
-      preferredDate: Bk.date,
-      preferredWindow: Bk.win,
-      customerName: Bk.name,
-      customerPhone: phone,
-      notes: Bk.note,
-      contactConsent: true,
-    };
-    const signature = JSON.stringify(payload);
-    if (Bk.payloadSignature !== signature) {
-      Bk.payloadSignature = signature;
-      Bk.idempotencyKey = crypto.randomUUID();
-    }
-    Object.assign(payload, {
-      idempotencyKey: Bk.idempotencyKey,
-      turnstileToken: Bk.botToken,
-      website: $("#booking-website").value,
-    });
-    Bk.submitting = true;
-    const fields = [...app.querySelectorAll("input, textarea")];
-    fields.forEach((field) => {
-      field.disabled = true;
-    });
-    button.disabled = true;
-    back.disabled = true;
-    button.textContent = "Saving request…";
-    err.textContent = "";
-    try {
-      const result = await sendBooking(payload);
-      Bk.reference = result.reference;
-      Bk.step = 6;
-      if (S.book === Bk && parseRoute()[0] === "book") render();
-      else toast("Request saved. Reference: " + result.reference);
-    } catch (error) {
-      if ($("#err"))
-        $("#err").textContent =
-          error.message === "Failed to fetch"
-            ? "No connection. Keep your details and retry when online."
-            : error.message;
-      if (window.turnstile && turnstileWidget !== null) {
-        window.turnstile.reset(turnstileWidget);
-        Bk.botToken = "";
-      }
-    } finally {
-      Bk.submitting = false;
-      fields.forEach((field) => {
-        if (field.isConnected) field.disabled = false;
-      });
-      if (button.isConnected) {
-        button.disabled = false;
-        back.disabled = false;
-        button.textContent = "Send request";
-      }
-    }
-  });
-};
-R.book.title = "Request an appointment";
-
+R.book.title = "Reserve an appointment";
+R.services = renderPrices;
+R.services.title = "Services & pricing";
 /* ---------- boot ---------- */
 shell();
 render();

@@ -1,0 +1,1487 @@
+[
+  {
+    "id": "0-0",
+    "group": "Men · cuts & styling",
+    "name": "Wash & Hairdo",
+    "src": "/assets/service-ref-v2-01.webp",
+    "cell": 0,
+    "alt": "AI service illustration: Men · cuts & styling — Wash & Hairdo",
+    "generated": true
+  },
+  {
+    "id": "0-1",
+    "group": "Men · cuts & styling",
+    "name": "Kids Haircut",
+    "src": "/assets/service-ref-v2-01.webp",
+    "cell": 1,
+    "alt": "AI service illustration: Men · cuts & styling — Kids Haircut",
+    "generated": true
+  },
+  {
+    "id": "0-2",
+    "group": "Men · cuts & styling",
+    "name": "Senior Stylist",
+    "src": "/assets/service-ref-v2-01.webp",
+    "cell": 2,
+    "alt": "AI service illustration: Men · cuts & styling — Senior Stylist",
+    "generated": true
+  },
+  {
+    "id": "0-3",
+    "group": "Men · cuts & styling",
+    "name": "Top Stylist",
+    "src": "/assets/service-ref-v2-01.webp",
+    "cell": 3,
+    "alt": "AI service illustration: Men · cuts & styling — Top Stylist",
+    "generated": true
+  },
+  {
+    "id": "0-4",
+    "group": "Men · cuts & styling",
+    "name": "Style Director",
+    "src": "/assets/service-ref-v2-01.webp",
+    "cell": 4,
+    "alt": "AI service illustration: Men · cuts & styling — Style Director",
+    "generated": true
+  },
+  {
+    "id": "1-0",
+    "group": "Men · shave & beard",
+    "name": "Zero Trim",
+    "src": "/assets/service-ref-v2-01.webp",
+    "cell": 5,
+    "alt": "AI service illustration: Men · shave & beard — Zero Trim",
+    "generated": true
+  },
+  {
+    "id": "1-1",
+    "group": "Men · shave & beard",
+    "name": "Clean Shave",
+    "src": "/assets/service-ref-v2-01.webp",
+    "cell": 6,
+    "alt": "AI service illustration: Men · shave & beard — Clean Shave",
+    "generated": true
+  },
+  {
+    "id": "1-2",
+    "group": "Men · shave & beard",
+    "name": "Beard Design",
+    "src": "/assets/service-ref-v2-01.webp",
+    "cell": 7,
+    "alt": "AI service illustration: Men · shave & beard — Beard Design",
+    "generated": true
+  },
+  {
+    "id": "2-0",
+    "group": "Men · treatments",
+    "name": "Davines / Olaplex retention",
+    "src": "/assets/service-ref-v2-01.webp",
+    "cell": 8,
+    "alt": "AI service illustration: Men · treatments — Davines / Olaplex retention",
+    "generated": true
+  },
+  {
+    "id": "2-1",
+    "group": "Men · treatments",
+    "name": "Davines / Olaplex curl",
+    "src": "/assets/service-ref-v2-01.webp",
+    "cell": 9,
+    "alt": "AI service illustration: Men · treatments — Davines / Olaplex curl",
+    "generated": true
+  },
+  {
+    "id": "2-2",
+    "group": "Men · treatments",
+    "name": "Davines Re-born",
+    "src": "/assets/service-ref-v2-01.webp",
+    "cell": 10,
+    "alt": "AI service illustration: Men · treatments — Davines Re-born",
+    "generated": true
+  },
+  {
+    "id": "2-3",
+    "group": "Men · treatments",
+    "name": "Schwarzkopf",
+    "src": "/assets/service-ref-v2-01.webp",
+    "cell": 11,
+    "alt": "AI service illustration: Men · treatments — Schwarzkopf",
+    "generated": true
+  },
+  {
+    "id": "2-4",
+    "group": "Men · treatments",
+    "name": "Express Spa",
+    "src": "/assets/service-ref-v2-01.webp",
+    "cell": 12,
+    "alt": "AI service illustration: Men · treatments — Express Spa",
+    "generated": true
+  },
+  {
+    "id": "3-0",
+    "group": "Men · colour",
+    "name": "Moustache / Beard",
+    "src": "/assets/service-ref-v2-01.webp",
+    "cell": 13,
+    "alt": "AI service illustration: Men · colour — Moustache / Beard",
+    "generated": true
+  },
+  {
+    "id": "3-1",
+    "group": "Men · colour",
+    "name": "Root Touch-up",
+    "src": "/assets/service-ref-v2-01.webp",
+    "cell": 14,
+    "alt": "AI service illustration: Men · colour — Root Touch-up",
+    "generated": true
+  },
+  {
+    "id": "3-2",
+    "group": "Men · colour",
+    "name": "Global Colour",
+    "src": "/assets/service-ref-v2-01.webp",
+    "cell": 15,
+    "alt": "AI service illustration: Men · colour — Global Colour",
+    "generated": true
+  },
+  {
+    "id": "3-3",
+    "group": "Men · colour",
+    "name": "Cap Highlights",
+    "src": "/assets/service-ref-v2-02.webp",
+    "cell": 0,
+    "alt": "AI service illustration: Men · colour — Cap Highlights",
+    "generated": true
+  },
+  {
+    "id": "4-0",
+    "group": "Men · massage",
+    "name": "Head · 20 min",
+    "src": "/assets/service-ref-v2-02.webp",
+    "cell": 1,
+    "alt": "AI service illustration: Men · massage — Head · 20 min",
+    "generated": true
+  },
+  {
+    "id": "4-1",
+    "group": "Men · massage",
+    "name": "Back · 30 min",
+    "src": "/assets/service-ref-v2-02.webp",
+    "cell": 2,
+    "alt": "AI service illustration: Men · massage — Back · 30 min",
+    "generated": true
+  },
+  {
+    "id": "4-2",
+    "group": "Men · massage",
+    "name": "Foot · 20 min",
+    "src": "/assets/service-ref-v2-02.webp",
+    "cell": 3,
+    "alt": "AI service illustration: Men · massage — Foot · 20 min",
+    "generated": true
+  },
+  {
+    "id": "5-0",
+    "group": "Women · cuts & styling",
+    "name": "Fringe Cut",
+    "src": "/assets/service-ref-v2-02.webp",
+    "cell": 4,
+    "alt": "AI service illustration: Women · cuts & styling — Fringe Cut",
+    "generated": true
+  },
+  {
+    "id": "5-1",
+    "group": "Women · cuts & styling",
+    "name": "Wash & Blast Dry",
+    "src": "/assets/service-ref-v2-02.webp",
+    "cell": 5,
+    "alt": "AI service illustration: Women · cuts & styling — Wash & Blast Dry",
+    "generated": true
+  },
+  {
+    "id": "5-2",
+    "group": "Women · cuts & styling",
+    "name": "Kids Haircut",
+    "src": "/assets/service-ref-v2-02.webp",
+    "cell": 6,
+    "alt": "AI service illustration: Women · cuts & styling — Kids Haircut",
+    "generated": true
+  },
+  {
+    "id": "5-3",
+    "group": "Women · cuts & styling",
+    "name": "Wash & Blow Dry",
+    "src": "/assets/service-ref-v2-02.webp",
+    "cell": 7,
+    "alt": "AI service illustration: Women · cuts & styling — Wash & Blow Dry",
+    "generated": true
+  },
+  {
+    "id": "5-4",
+    "group": "Women · cuts & styling",
+    "name": "Ironing",
+    "src": "/assets/service-ref-v2-02.webp",
+    "cell": 8,
+    "alt": "AI service illustration: Women · cuts & styling — Ironing",
+    "generated": true
+  },
+  {
+    "id": "5-5",
+    "group": "Women · cuts & styling",
+    "name": "Senior Stylist",
+    "src": "/assets/service-ref-v2-02.webp",
+    "cell": 9,
+    "alt": "AI service illustration: Women · cuts & styling — Senior Stylist",
+    "generated": true
+  },
+  {
+    "id": "5-6",
+    "group": "Women · cuts & styling",
+    "name": "Top Stylist",
+    "src": "/assets/service-ref-v2-02.webp",
+    "cell": 10,
+    "alt": "AI service illustration: Women · cuts & styling — Top Stylist",
+    "generated": true
+  },
+  {
+    "id": "5-7",
+    "group": "Women · cuts & styling",
+    "name": "Tongs",
+    "src": "/assets/service-ref-v2-02.webp",
+    "cell": 11,
+    "alt": "AI service illustration: Women · cuts & styling — Tongs",
+    "generated": true
+  },
+  {
+    "id": "5-8",
+    "group": "Women · cuts & styling",
+    "name": "Style Director",
+    "src": "/assets/service-ref-v2-02.webp",
+    "cell": 12,
+    "alt": "AI service illustration: Women · cuts & styling — Style Director",
+    "generated": true
+  },
+  {
+    "id": "6-0",
+    "group": "Women · straightening",
+    "name": "Fringe",
+    "src": "/assets/service-ref-v2-02.webp",
+    "cell": 13,
+    "alt": "AI service illustration: Women · straightening — Fringe",
+    "generated": true
+  },
+  {
+    "id": "6-1",
+    "group": "Women · straightening",
+    "name": "Crown Area",
+    "src": "/assets/service-ref-v2-02.webp",
+    "cell": 14,
+    "alt": "AI service illustration: Women · straightening — Crown Area",
+    "generated": true
+  },
+  {
+    "id": "6-2",
+    "group": "Women · straightening",
+    "name": "Bob Length",
+    "src": "/assets/service-ref-v2-02.webp",
+    "cell": 15,
+    "alt": "AI service illustration: Women · straightening — Bob Length",
+    "generated": true
+  },
+  {
+    "id": "6-3",
+    "group": "Women · straightening",
+    "name": "Shoulder Length",
+    "src": "/assets/service-ref-v2-03.webp",
+    "cell": 0,
+    "alt": "AI service illustration: Women · straightening — Shoulder Length",
+    "generated": true
+  },
+  {
+    "id": "6-4",
+    "group": "Women · straightening",
+    "name": "Below Shoulder",
+    "src": "/assets/service-ref-v2-03.webp",
+    "cell": 1,
+    "alt": "AI service illustration: Women · straightening — Below Shoulder",
+    "generated": true
+  },
+  {
+    "id": "6-5",
+    "group": "Women · straightening",
+    "name": "Up to Waist",
+    "src": "/assets/service-ref-v2-03.webp",
+    "cell": 2,
+    "alt": "AI service illustration: Women · straightening — Up to Waist",
+    "generated": true
+  },
+  {
+    "id": "7-0",
+    "group": "Women · Keratin",
+    "name": "Bob Length",
+    "src": "/assets/service-ref-v2-03.webp",
+    "cell": 3,
+    "alt": "AI service illustration: Women · Keratin — Bob Length",
+    "generated": true
+  },
+  {
+    "id": "7-1",
+    "group": "Women · Keratin",
+    "name": "Shoulder Length",
+    "src": "/assets/service-ref-v2-03.webp",
+    "cell": 4,
+    "alt": "AI service illustration: Women · Keratin — Shoulder Length",
+    "generated": true
+  },
+  {
+    "id": "7-2",
+    "group": "Women · Keratin",
+    "name": "Below Shoulder",
+    "src": "/assets/service-ref-v2-03.webp",
+    "cell": 5,
+    "alt": "AI service illustration: Women · Keratin — Below Shoulder",
+    "generated": true
+  },
+  {
+    "id": "7-3",
+    "group": "Women · Keratin",
+    "name": "Up to Waist",
+    "src": "/assets/service-ref-v2-03.webp",
+    "cell": 6,
+    "alt": "AI service illustration: Women · Keratin — Up to Waist",
+    "generated": true
+  },
+  {
+    "id": "8-0",
+    "group": "Women · Nanoplastia",
+    "name": "Bob Length",
+    "src": "/assets/service-ref-v2-03.webp",
+    "cell": 7,
+    "alt": "AI service illustration: Women · Nanoplastia — Bob Length",
+    "generated": true
+  },
+  {
+    "id": "8-1",
+    "group": "Women · Nanoplastia",
+    "name": "Shoulder Length",
+    "src": "/assets/service-ref-v2-03.webp",
+    "cell": 8,
+    "alt": "AI service illustration: Women · Nanoplastia — Shoulder Length",
+    "generated": true
+  },
+  {
+    "id": "8-2",
+    "group": "Women · Nanoplastia",
+    "name": "Below Shoulder",
+    "src": "/assets/service-ref-v2-03.webp",
+    "cell": 9,
+    "alt": "AI service illustration: Women · Nanoplastia — Below Shoulder",
+    "generated": true
+  },
+  {
+    "id": "8-3",
+    "group": "Women · Nanoplastia",
+    "name": "Up to Waist",
+    "src": "/assets/service-ref-v2-03.webp",
+    "cell": 10,
+    "alt": "AI service illustration: Women · Nanoplastia — Up to Waist",
+    "generated": true
+  },
+  {
+    "id": "9-0",
+    "group": "Women · hair botox",
+    "name": "Shoulder Length",
+    "src": "/assets/service-ref-v2-03.webp",
+    "cell": 11,
+    "alt": "AI service illustration: Women · hair botox — Shoulder Length",
+    "generated": true
+  },
+  {
+    "id": "9-1",
+    "group": "Women · hair botox",
+    "name": "Below Shoulder",
+    "src": "/assets/service-ref-v2-03.webp",
+    "cell": 12,
+    "alt": "AI service illustration: Women · hair botox — Below Shoulder",
+    "generated": true
+  },
+  {
+    "id": "9-2",
+    "group": "Women · hair botox",
+    "name": "Up to Waist",
+    "src": "/assets/service-ref-v2-03.webp",
+    "cell": 13,
+    "alt": "AI service illustration: Women · hair botox — Up to Waist",
+    "generated": true
+  },
+  {
+    "id": "10-0",
+    "group": "Women · treatments",
+    "name": "Retention · Shoulder",
+    "src": "/assets/service-ref-v2-03.webp",
+    "cell": 14,
+    "alt": "AI service illustration: Women · treatments — Retention · Shoulder",
+    "generated": true
+  },
+  {
+    "id": "10-1",
+    "group": "Women · treatments",
+    "name": "Retention · Extra Long",
+    "src": "/assets/service-ref-v2-03.webp",
+    "cell": 15,
+    "alt": "AI service illustration: Women · treatments — Retention · Extra Long",
+    "generated": true
+  },
+  {
+    "id": "10-2",
+    "group": "Women · treatments",
+    "name": "Curl · Shoulder",
+    "src": "/assets/service-ref-v2-04.webp",
+    "cell": 0,
+    "alt": "AI service illustration: Women · treatments — Curl · Shoulder",
+    "generated": true
+  },
+  {
+    "id": "10-3",
+    "group": "Women · treatments",
+    "name": "Curl · Extra Long",
+    "src": "/assets/service-ref-v2-04.webp",
+    "cell": 1,
+    "alt": "AI service illustration: Women · treatments — Curl · Extra Long",
+    "generated": true
+  },
+  {
+    "id": "10-4",
+    "group": "Women · treatments",
+    "name": "Davines Re-born · Shoulder",
+    "src": "/assets/service-ref-v2-04.webp",
+    "cell": 2,
+    "alt": "AI service illustration: Women · treatments — Davines Re-born · Shoulder",
+    "generated": true
+  },
+  {
+    "id": "10-5",
+    "group": "Women · treatments",
+    "name": "Davines Re-born · Extra Long",
+    "src": "/assets/service-ref-v2-04.webp",
+    "cell": 3,
+    "alt": "AI service illustration: Women · treatments — Davines Re-born · Extra Long",
+    "generated": true
+  },
+  {
+    "id": "10-6",
+    "group": "Women · treatments",
+    "name": "Schwarzkopf · Shoulder",
+    "src": "/assets/service-ref-v2-04.webp",
+    "cell": 4,
+    "alt": "AI service illustration: Women · treatments — Schwarzkopf · Shoulder",
+    "generated": true
+  },
+  {
+    "id": "10-7",
+    "group": "Women · treatments",
+    "name": "Schwarzkopf · Extra Long",
+    "src": "/assets/service-ref-v2-04.webp",
+    "cell": 5,
+    "alt": "AI service illustration: Women · treatments — Schwarzkopf · Extra Long",
+    "generated": true
+  },
+  {
+    "id": "10-8",
+    "group": "Women · treatments",
+    "name": "Express Spa",
+    "src": "/assets/service-ref-v2-04.webp",
+    "cell": 6,
+    "alt": "AI service illustration: Women · treatments — Express Spa",
+    "generated": true
+  },
+  {
+    "id": "11-0",
+    "group": "Women · colour",
+    "name": "Root Touch-up",
+    "src": "/assets/service-ref-v2-04.webp",
+    "cell": 7,
+    "alt": "AI service illustration: Women · colour — Root Touch-up",
+    "generated": true
+  },
+  {
+    "id": "11-1",
+    "group": "Women · colour",
+    "name": "Global Colour · Bob",
+    "src": "/assets/service-ref-v2-04.webp",
+    "cell": 8,
+    "alt": "AI service illustration: Women · colour — Global Colour · Bob",
+    "generated": true
+  },
+  {
+    "id": "11-2",
+    "group": "Women · colour",
+    "name": "Global Colour · Shoulder",
+    "src": "/assets/service-ref-v2-04.webp",
+    "cell": 9,
+    "alt": "AI service illustration: Women · colour — Global Colour · Shoulder",
+    "generated": true
+  },
+  {
+    "id": "11-3",
+    "group": "Women · colour",
+    "name": "Global Colour · Below Shoulder",
+    "src": "/assets/service-ref-v2-04.webp",
+    "cell": 10,
+    "alt": "AI service illustration: Women · colour — Global Colour · Below Shoulder",
+    "generated": true
+  },
+  {
+    "id": "11-4",
+    "group": "Women · colour",
+    "name": "Global Colour · Extra Long",
+    "src": "/assets/service-ref-v2-04.webp",
+    "cell": 11,
+    "alt": "AI service illustration: Women · colour — Global Colour · Extra Long",
+    "generated": true
+  },
+  {
+    "id": "12-0",
+    "group": "Women · highlights",
+    "name": "Single Streak",
+    "src": "/assets/service-ref-v2-04.webp",
+    "cell": 12,
+    "alt": "AI service illustration: Women · highlights — Single Streak",
+    "generated": true
+  },
+  {
+    "id": "12-1",
+    "group": "Women · highlights",
+    "name": "Crown Highlights",
+    "src": "/assets/service-ref-v2-04.webp",
+    "cell": 13,
+    "alt": "AI service illustration: Women · highlights — Crown Highlights",
+    "generated": true
+  },
+  {
+    "id": "12-2",
+    "group": "Women · highlights",
+    "name": "Pre-light / Toner",
+    "src": "/assets/service-ref-v2-04.webp",
+    "cell": 14,
+    "alt": "AI service illustration: Women · highlights — Pre-light / Toner",
+    "generated": true
+  },
+  {
+    "id": "12-3",
+    "group": "Women · highlights",
+    "name": "Advanced Colour Techniques",
+    "src": "/assets/service-ref-v2-04.webp",
+    "cell": 15,
+    "alt": "AI service illustration: Women · highlights — Advanced Colour Techniques",
+    "generated": true
+  },
+  {
+    "id": "12-4",
+    "group": "Women · highlights",
+    "name": "Side Highlights",
+    "src": "/assets/service-ref-v2-05.webp",
+    "cell": 0,
+    "alt": "AI service illustration: Women · highlights — Side Highlights",
+    "generated": true
+  },
+  {
+    "id": "12-5",
+    "group": "Women · highlights",
+    "name": "Bob Length",
+    "src": "/assets/service-ref-v2-05.webp",
+    "cell": 1,
+    "alt": "AI service illustration: Women · highlights — Bob Length",
+    "generated": true
+  },
+  {
+    "id": "12-6",
+    "group": "Women · highlights",
+    "name": "Shoulder Length",
+    "src": "/assets/service-ref-v2-05.webp",
+    "cell": 2,
+    "alt": "AI service illustration: Women · highlights — Shoulder Length",
+    "generated": true
+  },
+  {
+    "id": "12-7",
+    "group": "Women · highlights",
+    "name": "Below Shoulder",
+    "src": "/assets/service-ref-v2-05.webp",
+    "cell": 3,
+    "alt": "AI service illustration: Women · highlights — Below Shoulder",
+    "generated": true
+  },
+  {
+    "id": "12-8",
+    "group": "Women · highlights",
+    "name": "Extra Long",
+    "src": "/assets/service-ref-v2-05.webp",
+    "cell": 4,
+    "alt": "AI service illustration: Women · highlights — Extra Long",
+    "generated": true
+  },
+  {
+    "id": "13-0",
+    "group": "Scalp care",
+    "name": "Soothing · Sensitive Scalp",
+    "src": "/assets/service-ref-v2-05.webp",
+    "cell": 5,
+    "alt": "AI service illustration: Scalp care — Soothing · Sensitive Scalp",
+    "generated": true
+  },
+  {
+    "id": "13-1",
+    "group": "Scalp care",
+    "name": "Anti-Dandruff",
+    "src": "/assets/service-ref-v2-05.webp",
+    "cell": 6,
+    "alt": "AI service illustration: Scalp care — Anti-Dandruff",
+    "generated": true
+  },
+  {
+    "id": "13-2",
+    "group": "Scalp care",
+    "name": "Anti-Hairfall",
+    "src": "/assets/service-ref-v2-05.webp",
+    "cell": 7,
+    "alt": "AI service illustration: Scalp care — Anti-Hairfall",
+    "generated": true
+  },
+  {
+    "id": "13-3",
+    "group": "Scalp care",
+    "name": "Root Activating · Thinning Hair",
+    "src": "/assets/service-ref-v2-05.webp",
+    "cell": 8,
+    "alt": "AI service illustration: Scalp care — Root Activating · Thinning Hair",
+    "generated": true
+  },
+  {
+    "id": "14-0",
+    "group": "Hair care & spa",
+    "name": "Smart Bond",
+    "src": "/assets/service-ref-v2-05.webp",
+    "cell": 9,
+    "alt": "AI service illustration: Hair care & spa — Smart Bond",
+    "generated": true
+  },
+  {
+    "id": "14-1",
+    "group": "Hair care & spa",
+    "name": "Deep Nourishment",
+    "src": "/assets/service-ref-v2-05.webp",
+    "cell": 10,
+    "alt": "AI service illustration: Hair care & spa — Deep Nourishment",
+    "generated": true
+  },
+  {
+    "id": "14-2",
+    "group": "Hair care & spa",
+    "name": "Damage Repair",
+    "src": "/assets/service-ref-v2-05.webp",
+    "cell": 11,
+    "alt": "AI service illustration: Hair care & spa — Damage Repair",
+    "generated": true
+  },
+  {
+    "id": "14-3",
+    "group": "Hair care & spa",
+    "name": "Signature Hair Spa",
+    "src": "/assets/service-ref-v2-05.webp",
+    "cell": 12,
+    "alt": "AI service illustration: Hair care & spa — Signature Hair Spa",
+    "generated": true
+  },
+  {
+    "id": "15-0",
+    "group": "Women · massage",
+    "name": "Head · 20 min",
+    "src": "/assets/service-ref-v2-05.webp",
+    "cell": 13,
+    "alt": "AI service illustration: Women · massage — Head · 20 min",
+    "generated": true
+  },
+  {
+    "id": "15-1",
+    "group": "Women · massage",
+    "name": "Back · 30 min",
+    "src": "/assets/service-ref-v2-05.webp",
+    "cell": 14,
+    "alt": "AI service illustration: Women · massage — Back · 30 min",
+    "generated": true
+  },
+  {
+    "id": "15-2",
+    "group": "Women · massage",
+    "name": "Foot · 20 min",
+    "src": "/assets/service-ref-v2-05.webp",
+    "cell": 15,
+    "alt": "AI service illustration: Women · massage — Foot · 20 min",
+    "generated": true
+  },
+  {
+    "id": "16-0",
+    "group": "De-tan / bleach",
+    "name": "Upper Lip",
+    "src": "/assets/service-ref-v2-06.webp",
+    "cell": 0,
+    "alt": "AI service illustration: De-tan / bleach — Upper Lip",
+    "generated": true
+  },
+  {
+    "id": "16-1",
+    "group": "De-tan / bleach",
+    "name": "Underarms",
+    "src": "/assets/service-ref-v2-06.webp",
+    "cell": 1,
+    "alt": "AI service illustration: De-tan / bleach — Underarms",
+    "generated": true
+  },
+  {
+    "id": "16-2",
+    "group": "De-tan / bleach",
+    "name": "Blouse Line / Half Arms",
+    "src": "/assets/service-ref-v2-06.webp",
+    "cell": 2,
+    "alt": "AI service illustration: De-tan / bleach — Blouse Line / Half Arms",
+    "generated": true
+  },
+  {
+    "id": "16-3",
+    "group": "De-tan / bleach",
+    "name": "Half Legs",
+    "src": "/assets/service-ref-v2-06.webp",
+    "cell": 3,
+    "alt": "AI service illustration: De-tan / bleach — Half Legs",
+    "generated": true
+  },
+  {
+    "id": "16-4",
+    "group": "De-tan / bleach",
+    "name": "Full Arms",
+    "src": "/assets/service-ref-v2-06.webp",
+    "cell": 4,
+    "alt": "AI service illustration: De-tan / bleach — Full Arms",
+    "generated": true
+  },
+  {
+    "id": "16-5",
+    "group": "De-tan / bleach",
+    "name": "Face",
+    "src": "/assets/service-ref-v2-06.webp",
+    "cell": 5,
+    "alt": "AI service illustration: De-tan / bleach — Face",
+    "generated": true
+  },
+  {
+    "id": "16-6",
+    "group": "De-tan / bleach",
+    "name": "Face & Neck",
+    "src": "/assets/service-ref-v2-06.webp",
+    "cell": 6,
+    "alt": "AI service illustration: De-tan / bleach — Face & Neck",
+    "generated": true
+  },
+  {
+    "id": "16-7",
+    "group": "De-tan / bleach",
+    "name": "Feet",
+    "src": "/assets/service-ref-v2-06.webp",
+    "cell": 7,
+    "alt": "AI service illustration: De-tan / bleach — Feet",
+    "generated": true
+  },
+  {
+    "id": "16-8",
+    "group": "De-tan / bleach",
+    "name": "Full Legs",
+    "src": "/assets/service-ref-v2-06.webp",
+    "cell": 8,
+    "alt": "AI service illustration: De-tan / bleach — Full Legs",
+    "generated": true
+  },
+  {
+    "id": "16-9",
+    "group": "De-tan / bleach",
+    "name": "Front / Back",
+    "src": "/assets/service-ref-v2-06.webp",
+    "cell": 9,
+    "alt": "AI service illustration: De-tan / bleach — Front / Back",
+    "generated": true
+  },
+  {
+    "id": "16-10",
+    "group": "De-tan / bleach",
+    "name": "Full Body",
+    "src": "/assets/service-ref-v2-06.webp",
+    "cell": 10,
+    "alt": "AI service illustration: De-tan / bleach — Full Body",
+    "generated": true
+  },
+  {
+    "id": "17-0",
+    "group": "Clean-up",
+    "name": "Purifying",
+    "src": "/assets/service-ref-v2-06.webp",
+    "cell": 11,
+    "alt": "AI service illustration: Clean-up — Purifying",
+    "generated": true
+  },
+  {
+    "id": "17-1",
+    "group": "Clean-up",
+    "name": "Whitening",
+    "src": "/assets/service-ref-v2-06.webp",
+    "cell": 12,
+    "alt": "AI service illustration: Clean-up — Whitening",
+    "generated": true
+  },
+  {
+    "id": "17-2",
+    "group": "Clean-up",
+    "name": "Active Pureness",
+    "src": "/assets/service-ref-v2-06.webp",
+    "cell": 13,
+    "alt": "AI service illustration: Clean-up — Active Pureness",
+    "generated": true
+  },
+  {
+    "id": "18-0",
+    "group": "Facials",
+    "name": "Basic Active Pureness",
+    "src": "/assets/service-ref-v2-06.webp",
+    "cell": 14,
+    "alt": "AI service illustration: Facials — Basic Active Pureness",
+    "generated": true
+  },
+  {
+    "id": "18-1",
+    "group": "Facials",
+    "name": "Basic Whitening",
+    "src": "/assets/service-ref-v2-06.webp",
+    "cell": 15,
+    "alt": "AI service illustration: Facials — Basic Whitening",
+    "generated": true
+  },
+  {
+    "id": "18-2",
+    "group": "Facials",
+    "name": "Basic Purifying",
+    "src": "/assets/service-ref-v2-07.webp",
+    "cell": 0,
+    "alt": "AI service illustration: Facials — Basic Purifying",
+    "generated": true
+  },
+  {
+    "id": "18-3",
+    "group": "Facials",
+    "name": "Advanced Soothing Remedy",
+    "src": "/assets/service-ref-v2-07.webp",
+    "cell": 1,
+    "alt": "AI service illustration: Facials — Advanced Soothing Remedy",
+    "generated": true
+  },
+  {
+    "id": "18-4",
+    "group": "Facials",
+    "name": "Advanced Anti-ageing",
+    "src": "/assets/service-ref-v2-07.webp",
+    "cell": 2,
+    "alt": "AI service illustration: Facials — Advanced Anti-ageing",
+    "generated": true
+  },
+  {
+    "id": "18-5",
+    "group": "Facials",
+    "name": "Advanced Sublime Skin Double Peel · 90 min",
+    "src": "/assets/service-ref-v2-07.webp",
+    "cell": 3,
+    "alt": "AI service illustration: Facials — Advanced Sublime Skin Double Peel · 90 min",
+    "generated": true
+  },
+  {
+    "id": "18-6",
+    "group": "Facials",
+    "name": "Advanced Brightening · 90 min",
+    "src": "/assets/service-ref-v2-07.webp",
+    "cell": 4,
+    "alt": "AI service illustration: Facials — Advanced Brightening · 90 min",
+    "generated": true
+  },
+  {
+    "id": "19-0",
+    "group": "Body polishing",
+    "name": "Half Arms",
+    "src": "/assets/service-ref-v2-07.webp",
+    "cell": 5,
+    "alt": "AI service illustration: Body polishing — Half Arms",
+    "generated": true
+  },
+  {
+    "id": "19-1",
+    "group": "Body polishing",
+    "name": "Full Hands",
+    "src": "/assets/service-ref-v2-07.webp",
+    "cell": 6,
+    "alt": "AI service illustration: Body polishing — Full Hands",
+    "generated": true
+  },
+  {
+    "id": "19-2",
+    "group": "Body polishing",
+    "name": "Half Legs",
+    "src": "/assets/service-ref-v2-07.webp",
+    "cell": 7,
+    "alt": "AI service illustration: Body polishing — Half Legs",
+    "generated": true
+  },
+  {
+    "id": "19-3",
+    "group": "Body polishing",
+    "name": "Full Legs",
+    "src": "/assets/service-ref-v2-07.webp",
+    "cell": 8,
+    "alt": "AI service illustration: Body polishing — Full Legs",
+    "generated": true
+  },
+  {
+    "id": "19-4",
+    "group": "Body polishing",
+    "name": "Front / Back",
+    "src": "/assets/service-ref-v2-07.webp",
+    "cell": 9,
+    "alt": "AI service illustration: Body polishing — Front / Back",
+    "generated": true
+  },
+  {
+    "id": "19-5",
+    "group": "Body polishing",
+    "name": "Full Body · 2½ hours",
+    "src": "/assets/service-ref-v2-07.webp",
+    "cell": 10,
+    "alt": "AI service illustration: Body polishing — Full Body · 2½ hours",
+    "generated": true
+  },
+  {
+    "id": "20-0",
+    "group": "Nails",
+    "name": "Ombre / Chrome Gel Polish · per finger",
+    "src": "/assets/service-ref-v2-07.webp",
+    "cell": 11,
+    "alt": "AI service illustration: Nails — Ombre / Chrome Gel Polish · per finger",
+    "generated": true
+  },
+  {
+    "id": "20-1",
+    "group": "Nails",
+    "name": "Acrylic Extension + Solid Colour · per finger",
+    "src": "/assets/service-ref-v2-07.webp",
+    "cell": 12,
+    "alt": "AI service illustration: Nails — Acrylic Extension + Solid Colour · per finger",
+    "generated": true
+  },
+  {
+    "id": "20-2",
+    "group": "Nails",
+    "name": "Nail Art · per finger",
+    "src": "/assets/service-ref-v2-07.webp",
+    "cell": 13,
+    "alt": "AI service illustration: Nails — Nail Art · per finger",
+    "generated": true
+  },
+  {
+    "id": "20-3",
+    "group": "Nails",
+    "name": "Change of Polish · Hands / Feet",
+    "src": "/assets/service-ref-v2-07.webp",
+    "cell": 14,
+    "alt": "AI service illustration: Nails — Change of Polish · Hands / Feet",
+    "generated": true
+  },
+  {
+    "id": "20-4",
+    "group": "Nails",
+    "name": "Cut & File",
+    "src": "/assets/service-ref-v2-07.webp",
+    "cell": 15,
+    "alt": "AI service illustration: Nails — Cut & File",
+    "generated": true
+  },
+  {
+    "id": "20-5",
+    "group": "Nails",
+    "name": "French Gel Polish",
+    "src": "/assets/service-ref-v2-08.webp",
+    "cell": 0,
+    "alt": "AI service illustration: Nails — French Gel Polish",
+    "generated": true
+  },
+  {
+    "id": "20-6",
+    "group": "Nails",
+    "name": "Gel Polish",
+    "src": "/assets/service-ref-v2-08.webp",
+    "cell": 1,
+    "alt": "AI service illustration: Nails — Gel Polish",
+    "generated": true
+  },
+  {
+    "id": "20-7",
+    "group": "Nails",
+    "name": "Crystal / Rhinestone",
+    "src": "/assets/service-ref-v2-08.webp",
+    "cell": 2,
+    "alt": "AI service illustration: Nails — Crystal / Rhinestone",
+    "generated": true
+  },
+  {
+    "id": "20-8",
+    "group": "Nails",
+    "name": "Cat Eye",
+    "src": "/assets/service-ref-v2-08.webp",
+    "cell": 3,
+    "alt": "AI service illustration: Nails — Cat Eye",
+    "generated": true
+  },
+  {
+    "id": "20-9",
+    "group": "Nails",
+    "name": "Gel Extension + Solid Colour",
+    "src": "/assets/service-ref-v2-08.webp",
+    "cell": 4,
+    "alt": "AI service illustration: Nails — Gel Extension + Solid Colour",
+    "generated": true
+  },
+  {
+    "id": "20-10",
+    "group": "Nails",
+    "name": "Extension Removal",
+    "src": "/assets/service-ref-v2-08.webp",
+    "cell": 5,
+    "alt": "AI service illustration: Nails — Extension Removal",
+    "generated": true
+  },
+  {
+    "id": "20-11",
+    "group": "Nails",
+    "name": "Gel Polish Removal",
+    "src": "/assets/service-ref-v2-08.webp",
+    "cell": 6,
+    "alt": "AI service illustration: Nails — Gel Polish Removal",
+    "generated": true
+  },
+  {
+    "id": "20-12",
+    "group": "Nails",
+    "name": "Extension Refill",
+    "src": "/assets/service-ref-v2-08.webp",
+    "cell": 7,
+    "alt": "AI service illustration: Nails — Extension Refill",
+    "generated": true
+  },
+  {
+    "id": "20-13",
+    "group": "Nails",
+    "name": "Change of Gel Polish",
+    "src": "/assets/service-ref-v2-08.webp",
+    "cell": 8,
+    "alt": "AI service illustration: Nails — Change of Gel Polish",
+    "generated": true
+  },
+  {
+    "id": "21-0",
+    "group": "Waxing",
+    "name": "Upper Lip / Lower Lip",
+    "src": "/assets/service-ref-v2-08.webp",
+    "cell": 9,
+    "alt": "AI service illustration: Waxing — Upper Lip / Lower Lip",
+    "generated": true
+  },
+  {
+    "id": "21-1",
+    "group": "Waxing",
+    "name": "Chin",
+    "src": "/assets/service-ref-v2-08.webp",
+    "cell": 10,
+    "alt": "AI service illustration: Waxing — Chin",
+    "generated": true
+  },
+  {
+    "id": "21-2",
+    "group": "Waxing",
+    "name": "Ears",
+    "src": "/assets/service-ref-v2-08.webp",
+    "cell": 11,
+    "alt": "AI service illustration: Waxing — Ears",
+    "generated": true
+  },
+  {
+    "id": "21-3",
+    "group": "Waxing",
+    "name": "Side",
+    "src": "/assets/service-ref-v2-08.webp",
+    "cell": 12,
+    "alt": "AI service illustration: Waxing — Side",
+    "generated": true
+  },
+  {
+    "id": "21-4",
+    "group": "Waxing",
+    "name": "Cheeks",
+    "src": "/assets/service-ref-v2-08.webp",
+    "cell": 13,
+    "alt": "AI service illustration: Waxing — Cheeks",
+    "generated": true
+  },
+  {
+    "id": "21-5",
+    "group": "Waxing",
+    "name": "Nose",
+    "src": "/assets/service-ref-v2-08.webp",
+    "cell": 14,
+    "alt": "AI service illustration: Waxing — Nose",
+    "generated": true
+  },
+  {
+    "id": "21-6",
+    "group": "Waxing",
+    "name": "Underarms",
+    "src": "/assets/service-ref-v2-08.webp",
+    "cell": 15,
+    "alt": "AI service illustration: Waxing — Underarms",
+    "generated": true
+  },
+  {
+    "id": "21-7",
+    "group": "Waxing",
+    "name": "Half Arms",
+    "src": "/assets/service-ref-v2-09.webp",
+    "cell": 0,
+    "alt": "AI service illustration: Waxing — Half Arms",
+    "generated": true
+  },
+  {
+    "id": "21-8",
+    "group": "Waxing",
+    "name": "Half Legs",
+    "src": "/assets/service-ref-v2-09.webp",
+    "cell": 1,
+    "alt": "AI service illustration: Waxing — Half Legs",
+    "generated": true
+  },
+  {
+    "id": "21-9",
+    "group": "Waxing",
+    "name": "Face Waxing",
+    "src": "/assets/service-ref-v2-09.webp",
+    "cell": 2,
+    "alt": "AI service illustration: Waxing — Face Waxing",
+    "generated": true
+  },
+  {
+    "id": "21-10",
+    "group": "Waxing",
+    "name": "Full Arms",
+    "src": "/assets/service-ref-v2-09.webp",
+    "cell": 3,
+    "alt": "AI service illustration: Waxing — Full Arms",
+    "generated": true
+  },
+  {
+    "id": "21-11",
+    "group": "Waxing",
+    "name": "Midriff",
+    "src": "/assets/service-ref-v2-09.webp",
+    "cell": 4,
+    "alt": "AI service illustration: Waxing — Midriff",
+    "generated": true
+  },
+  {
+    "id": "21-12",
+    "group": "Waxing",
+    "name": "¾ Legs",
+    "src": "/assets/service-ref-v2-09.webp",
+    "cell": 5,
+    "alt": "AI service illustration: Waxing — ¾ Legs",
+    "generated": true
+  },
+  {
+    "id": "21-13",
+    "group": "Waxing",
+    "name": "Bikini Line",
+    "src": "/assets/service-ref-v2-09.webp",
+    "cell": 6,
+    "alt": "AI service illustration: Waxing — Bikini Line",
+    "generated": true
+  },
+  {
+    "id": "21-14",
+    "group": "Waxing",
+    "name": "Back / Front",
+    "src": "/assets/service-ref-v2-09.webp",
+    "cell": 7,
+    "alt": "AI service illustration: Waxing — Back / Front",
+    "generated": true
+  },
+  {
+    "id": "21-15",
+    "group": "Waxing",
+    "name": "Full Legs",
+    "src": "/assets/service-ref-v2-09.webp",
+    "cell": 8,
+    "alt": "AI service illustration: Waxing — Full Legs",
+    "generated": true
+  },
+  {
+    "id": "21-16",
+    "group": "Waxing",
+    "name": "Bikini Wax",
+    "src": "/assets/service-ref-v2-09.webp",
+    "cell": 9,
+    "alt": "AI service illustration: Waxing — Bikini Wax",
+    "generated": true
+  },
+  {
+    "id": "21-17",
+    "group": "Waxing",
+    "name": "Full Body Waxing",
+    "src": "/assets/service-ref-v2-09.webp",
+    "cell": 10,
+    "alt": "AI service illustration: Waxing — Full Body Waxing",
+    "generated": true
+  },
+  {
+    "id": "22-0",
+    "group": "Threading",
+    "name": "Eyebrows",
+    "src": "/assets/service-ref-v2-09.webp",
+    "cell": 11,
+    "alt": "AI service illustration: Threading — Eyebrows",
+    "generated": true
+  },
+  {
+    "id": "22-1",
+    "group": "Threading",
+    "name": "Upper Lips",
+    "src": "/assets/service-ref-v2-09.webp",
+    "cell": 12,
+    "alt": "AI service illustration: Threading — Upper Lips",
+    "generated": true
+  },
+  {
+    "id": "22-2",
+    "group": "Threading",
+    "name": "Lower Lips",
+    "src": "/assets/service-ref-v2-09.webp",
+    "cell": 13,
+    "alt": "AI service illustration: Threading — Lower Lips",
+    "generated": true
+  },
+  {
+    "id": "22-3",
+    "group": "Threading",
+    "name": "Chin",
+    "src": "/assets/service-ref-v2-09.webp",
+    "cell": 14,
+    "alt": "AI service illustration: Threading — Chin",
+    "generated": true
+  },
+  {
+    "id": "22-4",
+    "group": "Threading",
+    "name": "Forehead",
+    "src": "/assets/service-ref-v2-09.webp",
+    "cell": 15,
+    "alt": "AI service illustration: Threading — Forehead",
+    "generated": true
+  },
+  {
+    "id": "22-5",
+    "group": "Threading",
+    "name": "Cheeks",
+    "src": "/assets/service-ref-v2-10.webp",
+    "cell": 0,
+    "alt": "AI service illustration: Threading — Cheeks",
+    "generated": true
+  },
+  {
+    "id": "22-6",
+    "group": "Threading",
+    "name": "Side",
+    "src": "/assets/service-ref-v2-10.webp",
+    "cell": 1,
+    "alt": "AI service illustration: Threading — Side",
+    "generated": true
+  },
+  {
+    "id": "22-7",
+    "group": "Threading",
+    "name": "Full Face",
+    "src": "/assets/service-ref-v2-10.webp",
+    "cell": 2,
+    "alt": "AI service illustration: Threading — Full Face",
+    "generated": true
+  },
+  {
+    "id": "23-0",
+    "group": "Manicure & pedicure",
+    "name": "Cut / File",
+    "src": "/assets/service-ref-v2-10.webp",
+    "cell": 3,
+    "alt": "AI service illustration: Manicure & pedicure — Cut / File",
+    "generated": true
+  },
+  {
+    "id": "23-1",
+    "group": "Manicure & pedicure",
+    "name": "Change of Polish",
+    "src": "/assets/service-ref-v2-10.webp",
+    "cell": 4,
+    "alt": "AI service illustration: Manicure & pedicure — Change of Polish",
+    "generated": true
+  },
+  {
+    "id": "23-2",
+    "group": "Manicure & pedicure",
+    "name": "Classic Manicure",
+    "src": "/assets/service-ref-v2-10.webp",
+    "cell": 5,
+    "alt": "AI service illustration: Manicure & pedicure — Classic Manicure",
+    "generated": true
+  },
+  {
+    "id": "23-3",
+    "group": "Manicure & pedicure",
+    "name": "Classic Pedicure",
+    "src": "/assets/service-ref-v2-10.webp",
+    "cell": 6,
+    "alt": "AI service illustration: Manicure & pedicure — Classic Pedicure",
+    "generated": true
+  },
+  {
+    "id": "23-4",
+    "group": "Manicure & pedicure",
+    "name": "Spa Manicure",
+    "src": "/assets/service-ref-v2-10.webp",
+    "cell": 7,
+    "alt": "AI service illustration: Manicure & pedicure — Spa Manicure",
+    "generated": true
+  },
+  {
+    "id": "23-5",
+    "group": "Manicure & pedicure",
+    "name": "Spa Pedicure",
+    "src": "/assets/service-ref-v2-10.webp",
+    "cell": 8,
+    "alt": "AI service illustration: Manicure & pedicure — Spa Pedicure",
+    "generated": true
+  },
+  {
+    "id": "23-6",
+    "group": "Manicure & pedicure",
+    "name": "BOM Manicure",
+    "src": "/assets/service-ref-v2-10.webp",
+    "cell": 9,
+    "alt": "AI service illustration: Manicure & pedicure — BOM Manicure",
+    "generated": true
+  },
+  {
+    "id": "23-7",
+    "group": "Manicure & pedicure",
+    "name": "BOM Pedicure",
+    "src": "/assets/service-ref-v2-10.webp",
+    "cell": 10,
+    "alt": "AI service illustration: Manicure & pedicure — BOM Pedicure",
+    "generated": true
+  },
+  {
+    "id": "23-8",
+    "group": "Manicure & pedicure",
+    "name": "Lyco Manicure",
+    "src": "/assets/service-ref-v2-10.webp",
+    "cell": 11,
+    "alt": "AI service illustration: Manicure & pedicure — Lyco Manicure",
+    "generated": true
+  },
+  {
+    "id": "23-9",
+    "group": "Manicure & pedicure",
+    "name": "Lyco Pedicure",
+    "src": "/assets/service-ref-v2-10.webp",
+    "cell": 12,
+    "alt": "AI service illustration: Manicure & pedicure — Lyco Pedicure",
+    "generated": true
+  },
+  {
+    "id": "pdf-headshave",
+    "src": "/assets/pdf-menu-service-references.webp",
+    "cell": 0,
+    "columns": 4,
+    "rows": 2,
+    "alt": "AI service illustration: Head shave",
+    "generated": true
+  },
+  {
+    "id": "pdf-eye",
+    "src": "/assets/pdf-menu-service-references.webp",
+    "cell": 1,
+    "columns": 4,
+    "rows": 2,
+    "alt": "AI service illustration: Eye treatment with eye pads",
+    "generated": true
+  },
+  {
+    "id": "pdf-acne",
+    "src": "/assets/pdf-menu-service-references.webp",
+    "cell": 2,
+    "columns": 4,
+    "rows": 2,
+    "alt": "AI service illustration: Acne facial care",
+    "generated": true
+  },
+  {
+    "id": "pdf-pigmentation",
+    "src": "/assets/pdf-menu-service-references.webp",
+    "cell": 3,
+    "columns": 4,
+    "rows": 2,
+    "alt": "AI service illustration: Pigmentation facial care",
+    "generated": true
+  },
+  {
+    "id": "pdf-neck-wax",
+    "src": "/assets/pdf-menu-service-references.webp",
+    "cell": 4,
+    "columns": 4,
+    "rows": 2,
+    "alt": "AI service illustration: Neck waxing",
+    "generated": true
+  },
+  {
+    "id": "pdf-neck-thread",
+    "src": "/assets/pdf-menu-service-references.webp",
+    "cell": 5,
+    "columns": 4,
+    "rows": 2,
+    "alt": "AI service illustration: Neck threading",
+    "generated": true
+  },
+  {
+    "id": "pdf-neck-cream",
+    "src": "/assets/pdf-menu-service-references.webp",
+    "cell": 6,
+    "columns": 4,
+    "rows": 2,
+    "alt": "AI service illustration: Neck de-tan / bleach cream",
+    "generated": true
+  },
+  {
+    "id": "pdf-scalp",
+    "src": "/assets/pdf-menu-service-references.webp",
+    "cell": 7,
+    "columns": 4,
+    "rows": 2,
+    "alt": "AI service illustration: Scalp exfoliation",
+    "generated": true
+  }
+]

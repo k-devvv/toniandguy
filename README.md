@@ -89,3 +89,6 @@ Free database plans are not a backup strategy. Before accepting real bookings, a
 ## Costs
 
 Cloudflare static hosting and Supabase may start within free-plan limits; dynamic API/database limits still apply. Domain/email renewal and any messaging provider fees are separate. Earlier purchase screenshots are estimates, not guaranteed current prices. No paid services or live deployment are provisioned by merely pushing this repository.
+
+## Calendar booking update
+Reserve now opens a single calendar/time/service/contact page. Requested half-hour start time and exact imported menu item are saved in booking notes; existing broad service category/window fields remain for CRM compatibility. Times are preferences and are not capacity reservations. Hours: daily 10 AM–9 PM. Both branches use +91 81237 29873. Menu prices now come from the client-supplied TONY_AND_GUY_NEW_MENU.pdf. Both differing haircut tables are preserved. See docs/pdf-menu-update.md.

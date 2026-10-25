@@ -1,0 +1,936 @@
+{
+  "source": "/menu/TONY_AND_GUY_NEW_MENU.pdf",
+  "notice": "Government Taxes as Applicable *Conditions Apply",
+  "sections": [
+    {
+      "name": "HAIR CUT · MENU 1",
+      "columns": ["Men", "Women"],
+      "category": "cut",
+      "note": "Haircut table printed on page 1 of the supplied menu.",
+      "rows": [
+        {
+          "name": "Style Director",
+          "prices": [2529, 3189],
+          "referenceIds": ["0-4", "5-8"]
+        },
+        {
+          "name": "Creative Director",
+          "prices": [1495, 2145],
+          "referenceIds": ["0-3", "5-6"]
+        },
+        {
+          "name": "Top Stylist",
+          "prices": [1265, 1760],
+          "referenceIds": ["0-3", "5-6"]
+        },
+        {
+          "name": "Senior Stylist",
+          "prices": [1099, 1430],
+          "referenceIds": ["0-2", "5-5"]
+        },
+        {
+          "name": "Fringe Cut",
+          "prices": [null, 590],
+          "referenceIds": [null, "5-0"]
+        },
+        {
+          "name": "Head Shave",
+          "prices": [899, null],
+          "referenceIds": ["pdf-headshave", null]
+        }
+      ]
+    },
+    {
+      "name": "HAIR CUT · MENU 2",
+      "columns": ["Men", "Women"],
+      "category": "cut",
+      "note": "Haircut table printed on page 2. Kids prices are Boy / Girl. The PDF contains two different haircut tables; confirm the applicable table with the salon.",
+      "rows": [
+        {
+          "name": "Style Director",
+          "prices": [1762, 2609],
+          "referenceIds": ["0-4", "5-8"]
+        },
+        {
+          "name": "Creative Director",
+          "prices": [1454, 2144],
+          "referenceIds": ["0-3", "5-6"]
+        },
+        {
+          "name": "Top Stylist",
+          "prices": [1100, 1650],
+          "referenceIds": ["0-3", "5-6"]
+        },
+        {
+          "name": "Senior Stylist",
+          "prices": [839, 1232],
+          "referenceIds": ["0-2", "5-5"]
+        },
+        {
+          "name": "Stylist (selected Outlets)",
+          "prices": [727, 825],
+          "referenceIds": ["0-2", "5-5"]
+        },
+        {
+          "name": "Fringe Cut",
+          "prices": [null, 590],
+          "referenceIds": [null, "5-0"]
+        },
+        {
+          "name": "Head Shave",
+          "prices": [899, null],
+          "referenceIds": ["pdf-headshave", null]
+        },
+        {
+          "name": "Kids Hair Cut (5 Yrs To 9 Yrs)",
+          "prices": [727, 825],
+          "referenceIds": ["0-1", "5-2"],
+          "variantLabels": ["Boy", "Girl"]
+        }
+      ]
+    },
+    {
+      "name": "BEARD STYLING",
+      "columns": ["Men"],
+      "category": "men",
+      "note": "",
+      "rows": [
+        {
+          "name": "Zero Trim",
+          "prices": [199],
+          "referenceIds": ["1-0"]
+        },
+        {
+          "name": "Beard Trim/shave",
+          "prices": [385],
+          "referenceIds": ["1-1"]
+        },
+        {
+          "name": "Beard Crafting",
+          "prices": [550],
+          "referenceIds": ["1-2"]
+        },
+        {
+          "name": "Beard Crafting Long/Long+",
+          "prices": [750],
+          "referenceIds": ["1-2"]
+        }
+      ]
+    },
+    {
+      "name": "STYLING",
+      "columns": ["Men", "Women"],
+      "category": "style",
+      "note": "",
+      "rows": [
+        {
+          "name": "Wash & Blast Dry",
+          "prices": [660, 990],
+          "referenceIds": ["0-0", "5-1"]
+        },
+        {
+          "name": "Blowdry (without Wash)",
+          "prices": [null, 990],
+          "referenceIds": [null, "5-3"]
+        },
+        {
+          "name": "In Curl/out Curl",
+          "prices": [null, 1210],
+          "referenceIds": [null, "5-3"]
+        },
+        {
+          "name": "In Curl/out Curl Long +",
+          "prices": [null, 1452],
+          "referenceIds": [null, "5-3"]
+        },
+        {
+          "name": "Tong Curl's/ironing",
+          "prices": [null, 1540],
+          "referenceIds": [null, "5-7"]
+        },
+        {
+          "name": "Tong Curl's/ironing Long +",
+          "prices": [null, 1760],
+          "referenceIds": [null, "5-7"]
+        }
+      ]
+    },
+    {
+      "name": "TECHINICAL COLORING",
+      "columns": ["Men", "Women"],
+      "category": "root",
+      "note": "",
+      "rows": [
+        {
+          "name": "Global",
+          "prices": [1869, null],
+          "referenceIds": ["3-2", null]
+        },
+        {
+          "name": "Beard Color",
+          "prices": [699, null],
+          "referenceIds": ["3-0", null]
+        },
+        {
+          "name": "Root Touch Up",
+          "prices": [null, 2089],
+          "referenceIds": [null, "11-0"]
+        },
+        {
+          "name": "Bob Length",
+          "prices": [null, 3299],
+          "referenceIds": [null, "11-1"]
+        },
+        {
+          "name": "Shoulder Length",
+          "prices": [null, 6049],
+          "referenceIds": [null, "11-2"]
+        },
+        {
+          "name": "Below Shoulder Length",
+          "prices": [null, 8799],
+          "referenceIds": [null, "11-3"]
+        },
+        {
+          "name": "Up To Waist",
+          "prices": [null, 11549],
+          "referenceIds": [null, "11-4"]
+        }
+      ]
+    },
+    {
+      "name": "STRAIGHTENING/SMOOTHING",
+      "columns": ["Price"],
+      "category": "smooth",
+      "note": "",
+      "rows": [
+        {
+          "name": "Fringe",
+          "prices": [2529],
+          "referenceIds": ["6-0"]
+        },
+        {
+          "name": "Crown Area",
+          "prices": [3739],
+          "referenceIds": ["6-1"]
+        },
+        {
+          "name": "Bob Length",
+          "prices": [7259],
+          "referenceIds": ["6-2"]
+        },
+        {
+          "name": "Shoulder Length",
+          "prices": [9349],
+          "referenceIds": ["6-3"]
+        },
+        {
+          "name": "Below Shoulder Length",
+          "prices": [11109],
+          "referenceIds": ["6-4"]
+        },
+        {
+          "name": "Up To Waist",
+          "prices": [15399],
+          "referenceIds": ["6-5"]
+        }
+      ]
+    },
+    {
+      "name": "FACIAL FULL BODY",
+      "columns": ["Price"],
+      "category": "spa",
+      "note": "",
+      "rows": [
+        {
+          "name": "Body Polishing",
+          "prices": [15399],
+          "referenceIds": ["19-5"]
+        },
+        {
+          "name": "Body Brightening",
+          "prices": [11109],
+          "referenceIds": ["16-10"]
+        }
+      ]
+    },
+    {
+      "name": "HIGHLIGHTS/LOWLIGHTS",
+      "columns": ["Men", "Women"],
+      "category": "balayage",
+      "note": "",
+      "rows": [
+        {
+          "name": "Highlights/lowlights",
+          "prices": [3299, null],
+          "referenceIds": ["3-3", null]
+        },
+        {
+          "name": "Bob Length",
+          "prices": [null, 6049],
+          "referenceIds": [null, "12-5"]
+        },
+        {
+          "name": "Shoulder Length",
+          "prices": [null, 9349],
+          "referenceIds": [null, "12-6"]
+        },
+        {
+          "name": "Below Shoulder Length",
+          "prices": [null, 11549],
+          "referenceIds": [null, "12-7"]
+        },
+        {
+          "name": "Up To Waist",
+          "prices": [null, 17049],
+          "referenceIds": [null, "12-8"]
+        },
+        {
+          "name": "Crown",
+          "prices": [null, 3999],
+          "referenceIds": [null, "12-1"]
+        },
+        {
+          "name": "Highlights Per Streak",
+          "prices": [null, 800],
+          "referenceIds": [null, "12-0"]
+        },
+        {
+          "name": "Pre Lighting Per Streak",
+          "prices": [null, 350],
+          "referenceIds": [null, "12-0"]
+        },
+        {
+          "name": "Pre Lighting",
+          "prices": [null, 2499],
+          "referenceIds": [null, "12-2"]
+        },
+        {
+          "name": "Color Toning",
+          "prices": [null, 4999],
+          "referenceIds": [null, "12-2"]
+        }
+      ]
+    },
+    {
+      "name": "HEAD MASSAGE",
+      "columns": ["Men", "Women"],
+      "category": "spa",
+      "note": "",
+      "rows": [
+        {
+          "name": "Without Wash",
+          "prices": [879, 1099],
+          "referenceIds": ["4-0", "15-0"]
+        },
+        {
+          "name": "With Hair Wash",
+          "prices": [1099, 1319],
+          "referenceIds": ["4-0", "15-0"]
+        },
+        {
+          "name": "Moroccan Oil Massage (with Out Wash)",
+          "prices": [1299, 1699],
+          "referenceIds": ["4-0", "15-0"]
+        },
+        {
+          "name": "Moroccan Oil Massage (with Wash)",
+          "prices": [1599, 1799],
+          "referenceIds": ["4-0", "15-0"]
+        }
+      ]
+    },
+    {
+      "name": "KERATIN (NANOPLASTIA/CYSTEINE)",
+      "columns": ["Price"],
+      "category": "smooth",
+      "note": "",
+      "rows": [
+        {
+          "name": "Fringe",
+          "prices": [4999],
+          "referenceIds": ["6-0"]
+        },
+        {
+          "name": "Bob Length",
+          "prices": [6599],
+          "referenceIds": ["7-0"]
+        },
+        {
+          "name": "Shoulder Length",
+          "prices": [8359],
+          "referenceIds": ["7-1"]
+        },
+        {
+          "name": "Below Shoulder Length",
+          "prices": [10999],
+          "referenceIds": ["7-2"]
+        },
+        {
+          "name": "Up To Waist",
+          "prices": [16499],
+          "referenceIds": ["7-3"]
+        }
+      ]
+    },
+    {
+      "name": "ADVANCE KERATINE (QOD/BOTOX/BOTOLISS)",
+      "columns": ["Price"],
+      "category": "smooth",
+      "note": "",
+      "rows": [
+        {
+          "name": "Fringe",
+          "prices": [6325],
+          "referenceIds": ["6-0"]
+        },
+        {
+          "name": "Bob Length",
+          "prices": [7259],
+          "referenceIds": ["9-0"]
+        },
+        {
+          "name": "Shoulder Length",
+          "prices": [12099],
+          "referenceIds": ["9-0"]
+        },
+        {
+          "name": "Below Shoulder",
+          "prices": [15949],
+          "referenceIds": ["9-1"]
+        },
+        {
+          "name": "Upto Waist",
+          "prices": [18149],
+          "referenceIds": ["9-2"]
+        },
+        {
+          "name": "Add On 50 Ml",
+          "prices": [4620],
+          "referenceIds": ["10-0"]
+        }
+      ]
+    },
+    {
+      "name": "MANICURE",
+      "columns": ["Price"],
+      "category": "spa",
+      "note": "",
+      "rows": [
+        {
+          "name": "Express",
+          "prices": [330],
+          "referenceIds": ["23-2"]
+        },
+        {
+          "name": "Deluxe",
+          "prices": [769],
+          "referenceIds": ["23-4"]
+        },
+        {
+          "name": "Luxury",
+          "prices": [1319],
+          "referenceIds": ["23-6"]
+        },
+        {
+          "name": "Spa",
+          "prices": [1814],
+          "referenceIds": ["23-8"]
+        },
+        {
+          "name": "Nail Paint",
+          "prices": [164],
+          "referenceIds": ["23-1"]
+        }
+      ]
+    },
+    {
+      "name": "FACIAL",
+      "columns": ["Price"],
+      "category": "spa",
+      "note": "",
+      "rows": [
+        {
+          "name": "Clean Up",
+          "prices": [1979],
+          "referenceIds": ["17-0"]
+        },
+        {
+          "name": "Classic",
+          "prices": [2749],
+          "referenceIds": ["18-0"]
+        },
+        {
+          "name": "Skin Whitening",
+          "prices": [3299],
+          "referenceIds": ["18-1"]
+        },
+        {
+          "name": "Skin Energizing & Recovery",
+          "prices": [3849],
+          "referenceIds": ["18-3"]
+        },
+        {
+          "name": "Skin Brightening",
+          "prices": [4399],
+          "referenceIds": ["18-6"]
+        },
+        {
+          "name": "Reverse Anti Agning",
+          "prices": [4399],
+          "referenceIds": ["18-4"]
+        },
+        {
+          "name": "Signature",
+          "prices": [5499],
+          "referenceIds": ["18-5"]
+        },
+        {
+          "name": "Luxury",
+          "prices": [6599],
+          "referenceIds": ["18-6"]
+        }
+      ]
+    },
+    {
+      "name": "FACIAL TREATMENTS",
+      "columns": ["Price"],
+      "category": "spa",
+      "note": "",
+      "rows": [
+        {
+          "name": "Eye Treatment",
+          "prices": [2199],
+          "referenceIds": ["pdf-eye"]
+        },
+        {
+          "name": "Acne Treatment",
+          "prices": [4179],
+          "referenceIds": ["pdf-acne"]
+        },
+        {
+          "name": "Anti Agening Treatment",
+          "prices": [4399],
+          "referenceIds": ["18-4"]
+        },
+        {
+          "name": "Skin Brightening Treatment",
+          "prices": [4399],
+          "referenceIds": ["18-6"]
+        },
+        {
+          "name": "Pigmentation Treatment",
+          "prices": [4949],
+          "referenceIds": ["pdf-pigmentation"]
+        }
+      ]
+    },
+    {
+      "name": "HAIR SPA",
+      "columns": ["Price"],
+      "category": "spa",
+      "note": "",
+      "rows": [
+        {
+          "name": "Alchemy Express",
+          "prices": [1869],
+          "referenceIds": ["2-4"]
+        },
+        {
+          "name": "Alchemy Hair Spa",
+          "prices": [3189],
+          "referenceIds": ["14-3"]
+        },
+        {
+          "name": "Luxe Oil Spa",
+          "prices": [4289],
+          "referenceIds": ["14-1"]
+        },
+        {
+          "name": "Liquid Hair Spa",
+          "prices": [5499],
+          "referenceIds": ["14-1"]
+        },
+        {
+          "name": "Anti Dandruff Treatment",
+          "prices": [3189],
+          "referenceIds": ["13-1"]
+        },
+        {
+          "name": "Shea Hair Retention Treatment",
+          "prices": [4289],
+          "referenceIds": ["10-0"]
+        },
+        {
+          "name": "Shea Hair Curl Treatment",
+          "prices": [4289],
+          "referenceIds": ["10-2"]
+        },
+        {
+          "name": "Moroccan Oil Express Hair Spa",
+          "prices": [1869],
+          "referenceIds": ["2-4"]
+        },
+        {
+          "name": "Moroccan Oil Scalp & Hair Spa",
+          "prices": [5499],
+          "referenceIds": ["14-3"]
+        },
+        {
+          "name": "Wellaplex Standalone Treatment",
+          "prices": [3520],
+          "referenceIds": ["14-0"]
+        },
+        {
+          "name": "Wellaplex Add On",
+          "prices": [1320],
+          "referenceIds": ["14-0"]
+        },
+        {
+          "name": "Shampeeling Add On",
+          "prices": [880],
+          "referenceIds": ["pdf-scalp"]
+        }
+      ]
+    },
+    {
+      "name": "WAXING",
+      "columns": ["Rollon", "Premimum"],
+      "category": "spa",
+      "note": "",
+      "rows": [
+        {
+          "name": "Half Legs",
+          "prices": [714, 549],
+          "referenceIds": ["21-8", "21-8"]
+        },
+        {
+          "name": "Full Legs",
+          "prices": [934, 714],
+          "referenceIds": ["21-15", "21-15"]
+        },
+        {
+          "name": "Half Arms",
+          "prices": [659, 439],
+          "referenceIds": ["21-7", "21-7"]
+        },
+        {
+          "name": "Full Arms",
+          "prices": [714, 494],
+          "referenceIds": ["21-10", "21-10"]
+        },
+        {
+          "name": "Under Arms",
+          "prices": [329, 329],
+          "referenceIds": ["21-6", "21-6"]
+        },
+        {
+          "name": "Midriff",
+          "prices": [899, null],
+          "referenceIds": ["21-11", "21-11"]
+        },
+        {
+          "name": "Full Body",
+          "prices": [4400, 4069],
+          "referenceIds": ["21-17", "21-17"]
+        },
+        {
+          "name": "Bikini",
+          "prices": [null, 2899],
+          "referenceIds": ["21-16", "21-16"]
+        },
+        {
+          "name": "Back",
+          "prices": [1099, 989],
+          "referenceIds": ["21-14", "21-14"]
+        },
+        {
+          "name": "Front",
+          "prices": [1099, 989],
+          "referenceIds": ["21-14", "21-14"]
+        }
+      ]
+    },
+    {
+      "name": "FACIAL ADD ONS",
+      "columns": ["Price"],
+      "category": "spa",
+      "note": "",
+      "rows": [
+        {
+          "name": "Face Pack",
+          "prices": [1099],
+          "referenceIds": ["18-0"]
+        },
+        {
+          "name": "Intensive Treatment Mask",
+          "prices": [3079],
+          "referenceIds": ["18-3"]
+        }
+      ]
+    },
+    {
+      "name": "PEDICURE",
+      "columns": ["Price"],
+      "category": "spa",
+      "note": "",
+      "rows": [
+        {
+          "name": "Express",
+          "prices": [385],
+          "referenceIds": ["23-3"]
+        },
+        {
+          "name": "Deluxe",
+          "prices": [934],
+          "referenceIds": ["23-5"]
+        },
+        {
+          "name": "Luxury",
+          "prices": [1374],
+          "referenceIds": ["23-7"]
+        },
+        {
+          "name": "Spa",
+          "prices": [2034],
+          "referenceIds": ["23-9"]
+        },
+        {
+          "name": "Foot Reflexology (20 Min)",
+          "prices": [1299],
+          "referenceIds": ["15-2"]
+        },
+        {
+          "name": "Nail Paint",
+          "prices": [164],
+          "referenceIds": ["23-3"]
+        }
+      ]
+    },
+    {
+      "name": "NAIL CARE",
+      "columns": ["Price"],
+      "category": "spa",
+      "note": "",
+      "rows": [
+        {
+          "name": "Gel Extension (extension+gel Polish)",
+          "prices": [2749],
+          "referenceIds": ["20-9"]
+        },
+        {
+          "name": "Acrylic Extension (extension+gel Polish)",
+          "prices": [3849],
+          "referenceIds": ["20-1"]
+        },
+        {
+          "name": "Nail Art Per Tip",
+          "prices": [153],
+          "referenceIds": ["20-2"]
+        },
+        {
+          "name": "Extension Removal",
+          "prices": [1299],
+          "referenceIds": ["20-10"]
+        },
+        {
+          "name": "Gel Polish Removal",
+          "prices": [699],
+          "referenceIds": ["20-11"]
+        },
+        {
+          "name": "Gel Polish",
+          "prices": [1100],
+          "referenceIds": ["20-6"]
+        }
+      ]
+    },
+    {
+      "name": "FACE WAXING",
+      "columns": ["Price"],
+      "category": "spa",
+      "note": "",
+      "rows": [
+        {
+          "name": "Upper Lip",
+          "prices": [164],
+          "referenceIds": ["21-0"]
+        },
+        {
+          "name": "Lower Lip",
+          "prices": [164],
+          "referenceIds": ["21-0"]
+        },
+        {
+          "name": "Chin",
+          "prices": [199],
+          "referenceIds": ["21-1"]
+        },
+        {
+          "name": "Sides",
+          "prices": [199],
+          "referenceIds": ["21-3"]
+        },
+        {
+          "name": "Fore Head",
+          "prices": [199],
+          "referenceIds": ["22-4"]
+        },
+        {
+          "name": "Nose",
+          "prices": [199],
+          "referenceIds": ["21-5"]
+        },
+        {
+          "name": "Ear",
+          "prices": [199],
+          "referenceIds": ["21-2"]
+        },
+        {
+          "name": "Neck",
+          "prices": [399],
+          "referenceIds": ["pdf-neck-wax"]
+        },
+        {
+          "name": "Full Face Waxing",
+          "prices": [1099],
+          "referenceIds": ["21-9"]
+        }
+      ]
+    },
+    {
+      "name": "BLEACH",
+      "columns": ["Price"],
+      "category": "spa",
+      "note": "",
+      "rows": [
+        {
+          "name": "Face",
+          "prices": [1099],
+          "referenceIds": ["16-5"]
+        },
+        {
+          "name": "Neck",
+          "prices": [699],
+          "referenceIds": ["pdf-neck-cream"]
+        },
+        {
+          "name": "Hand's",
+          "prices": [1319],
+          "referenceIds": ["16-4"]
+        },
+        {
+          "name": "Full Back / Front",
+          "prices": [1699],
+          "referenceIds": ["16-9"]
+        },
+        {
+          "name": "Half Back / Front",
+          "prices": [999],
+          "referenceIds": ["16-9"]
+        },
+        {
+          "name": "Legs",
+          "prices": [1599],
+          "referenceIds": ["16-8"]
+        },
+        {
+          "name": "Full Body",
+          "prices": [5169],
+          "referenceIds": ["16-10"]
+        }
+      ]
+    },
+    {
+      "name": "D-TAN",
+      "columns": ["Price"],
+      "category": "spa",
+      "note": "",
+      "rows": [
+        {
+          "name": "Face",
+          "prices": [1099],
+          "referenceIds": ["16-5"]
+        },
+        {
+          "name": "Neck",
+          "prices": [879],
+          "referenceIds": ["pdf-neck-cream"]
+        },
+        {
+          "name": "Hand's",
+          "prices": [1319],
+          "referenceIds": ["16-4"]
+        },
+        {
+          "name": "Full Back / Front",
+          "prices": [1899],
+          "referenceIds": ["16-9"]
+        },
+        {
+          "name": "Half Back / Front",
+          "prices": [1299],
+          "referenceIds": ["16-9"]
+        },
+        {
+          "name": "Legs",
+          "prices": [1649],
+          "referenceIds": ["16-8"]
+        },
+        {
+          "name": "Underarm",
+          "prices": [615],
+          "referenceIds": ["16-1"]
+        },
+        {
+          "name": "Full Body",
+          "prices": [6599],
+          "referenceIds": ["16-10"]
+        }
+      ]
+    },
+    {
+      "name": "THREADING",
+      "columns": ["Women"],
+      "category": "spa",
+      "note": "",
+      "rows": [
+        {
+          "name": "Eyebrows",
+          "prices": [199],
+          "referenceIds": ["22-0"]
+        },
+        {
+          "name": "Upper Lip",
+          "prices": [131],
+          "referenceIds": ["22-1"]
+        },
+        {
+          "name": "Chin",
+          "prices": [120],
+          "referenceIds": ["22-3"]
+        },
+        {
+          "name": "Lower Lip",
+          "prices": [131],
+          "referenceIds": ["22-2"]
+        },
+        {
+          "name": "Fore Head",
+          "prices": [120],
+          "referenceIds": ["22-4"]
+        },
+        {
+          "name": "Neck",
+          "prices": [131],
+          "referenceIds": ["pdf-neck-thread"]
+        },
+        {
+          "name": "Full Face",
+          "prices": [879],
+          "referenceIds": ["22-7"]
+        }
+      ]
+    }
+  ]
+}

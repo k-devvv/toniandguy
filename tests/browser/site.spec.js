@@ -18,23 +18,9 @@ async function setup(page, enabled = true) {
 }
 async function contactStep(page) {
   await page.goto("/#book");
-  await page
-    .getByRole("button", { name: "Sobha Arcadia", exact: true })
-    .click();
-  await page.getByRole("button", { name: "Continue", exact: true }).click();
-  await page.getByRole("button", { name: "No occasion", exact: true }).click();
-  await page.getByRole("button", { name: "Continue", exact: true }).click();
-  await page
-    .getByRole("button", { name: "Precision cut and finish", exact: true })
-    .click();
-  await page.getByRole("button", { name: "Continue", exact: true }).click();
-  await page
-    .getByRole("button", { name: "Let the salon recommend", exact: true })
-    .click();
-  await page.getByRole("button", { name: "Continue", exact: true }).click();
-  await page.locator('[data-k="date"]').first().click();
-  await page.getByRole("button", { name: "Morning", exact: true }).click();
-  await page.getByRole("button", { name: "Continue", exact: true }).click();
+  await page.locator("[data-date]:not([disabled])").first().click();
+  await page.locator('[data-time="10:00"]').click();
+  await page.locator("#booking-service").selectOption("0-2");
 }
 test("home loads assets with no JS errors at mobile width", async ({
   page,
@@ -72,18 +58,24 @@ test("booking saves once, shows durable reference, and preserves draft when navi
   });
   await contactStep(page);
   await page.getByLabel("Your name", { exact: true }).fill("Test Customer");
-  await page.getByLabel("WhatsApp number", { exact: true }).fill("9876543210");
-  await page.getByRole("button", { name: "Back", exact: true }).click();
-  await page.getByRole("button", { name: "Continue", exact: true }).click();
+  await page
+    .getByLabel("Mobile / WhatsApp number", { exact: true })
+    .fill("9876543210");
+  await page.locator("#month-next").click();
+  await page.locator("#month-prev").click();
   await expect(page.getByLabel("Your name", { exact: true })).toHaveValue(
     "Test Customer",
   );
   await page.locator("#contact-consent").check();
-  await page.getByRole("button", { name: "Send request", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Request appointment ↗", exact: true })
+    .click();
   await expect(
     page.getByText("Request received · Pending confirmation"),
   ).toBeVisible();
-  await expect(page.locator("#sumtxt")).toContainText("TG-SAVED-001");
+  await expect(page.locator(".booking-panel").first()).toContainText(
+    "TG-SAVED-001",
+  );
   expect(submissions).toBe(1);
 });
 test("database failure keeps entered details and never shows success", async ({
@@ -105,9 +97,13 @@ test("database failure keeps entered details and never shows success", async ({
   await page
     .getByLabel("Your name", { exact: true })
     .fill("<script>Test</script>");
-  await page.getByLabel("WhatsApp number", { exact: true }).fill("9876543210");
+  await page
+    .getByLabel("Mobile / WhatsApp number", { exact: true })
+    .fill("9876543210");
   await page.locator("#contact-consent").check();
-  await page.getByRole("button", { name: "Send request", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Request appointment ↗", exact: true })
+    .click();
   await expect(page.locator("#err")).toContainText("unavailable");
   await expect(page.getByLabel("Your name", { exact: true })).toHaveValue(
     "<script>Test</script>",
@@ -126,12 +122,18 @@ test("malformed phone and absent consent cannot submit", async ({ page }) => {
   await contactStep(page);
   await page.getByLabel("Your name", { exact: true }).fill("Customer");
   await page
-    .getByLabel("WhatsApp number", { exact: true })
+    .getByLabel("Mobile / WhatsApp number", { exact: true })
     .fill("999919876543210");
-  await page.getByRole("button", { name: "Send request", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Request appointment ↗", exact: true })
+    .click();
   await expect(page.locator("#err")).toContainText("valid Indian");
-  await page.getByLabel("WhatsApp number", { exact: true }).fill("9876543210");
-  await page.getByRole("button", { name: "Send request", exact: true }).click();
+  await page
+    .getByLabel("Mobile / WhatsApp number", { exact: true })
+    .fill("9876543210");
+  await page
+    .getByRole("button", { name: "Request appointment ↗", exact: true })
+    .click();
   await expect(page.locator("#err")).toContainText("agree");
   expect(calls).toBe(0);
 });
@@ -139,11 +141,11 @@ test("unconfigured booking service disables submission", async ({ page }) => {
   await setup(page, false);
   await contactStep(page);
   await expect(
-    page.getByRole("button", { name: "Send request", exact: true }),
+    page.getByRole("button", { name: "Request appointment ↗", exact: true }),
   ).toBeDisabled();
   await expect(
     page.getByText(
-      "Online requests are not available yet. Please check back shortly.",
+      "Online setup is in progress. Call or WhatsApp to book now.",
     ),
   ).toBeVisible();
 });
