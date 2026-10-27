@@ -77,6 +77,16 @@ test("booking saves once, shows durable reference, and preserves draft when navi
     "TG-SAVED-001",
   );
   expect(submissions).toBe(1);
+  const handoff = page.locator('#send-booking-whatsapp');
+  await expect(handoff).toBeVisible();
+  const handoffUrl = new URL(await handoff.getAttribute('href'));
+  expect(handoffUrl.hostname).toBe('wa.me');
+  expect(handoffUrl.searchParams.get('text')).toContain('TG-SAVED-001');
+  expect(handoffUrl.searchParams.get('text')).toContain('10:00 IST');
+  expect(handoffUrl.searchParams.get('text')).toContain('Test Customer');
+  expect(handoffUrl.searchParams.get('text')).toContain('not a confirmed appointment');
+  await page.setViewportSize({width:390,height:844});
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 test("database failure keeps entered details and never shows success", async ({
   page,
@@ -317,3 +327,19 @@ test("stale refresh cannot sign out a newly logged-in staff session", async ({
     .toBe("access-2");
   expect(lists).toBe(3);
 });
+
+test('unsaved WhatsApp enquiry keeps chosen details without inventing a saved reference', async ({page}) => {
+  await setup(page,false);
+  await contactStep(page);
+  await page.getByLabel('Your name',{exact:true}).fill('Customer & Friend');
+  await page.getByLabel('Mobile / WhatsApp number',{exact:true}).fill('9000000000');
+  const link=page.locator('#booking-whatsapp-enquiry');
+  await link.evaluate(el => { el.addEventListener('click',event => event.preventDefault()); el.click(); });
+  const url=new URL(await link.getAttribute('href'));
+  expect(url.hostname).toBe('wa.me');
+  expect(url.searchParams.get('text')).toContain('Customer & Friend');
+  expect(url.searchParams.get('text')).toContain('10:00 IST');
+  expect(url.searchParams.get('text')).toContain('Enquiry only');
+  expect(url.searchParams.get('text')).not.toContain('Saved request:');
+});
+

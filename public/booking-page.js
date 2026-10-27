@@ -1,3 +1,4 @@
+import { whatsappBookingUrl } from "./whatsapp-booking.js";
 import { renderMenuCard } from "./menu-card.js";
 import { referenceMarkup } from "./service-images.js";
 import { localDate, normalizePhone, sendBooking } from "./booking-utils.js";
@@ -56,7 +57,7 @@ export function renderSimpleBooking(
     app.innerHTML =
       '<section class="booking-page wrap"><div class="cap">Request received · Pending confirmation</div><h1>Thank you,<br>' +
       esc(d.name?.split(" ")[0]) +
-      '.</h1><p class="lead">Our team will contact you to confirm availability.</p><div class="booking-panel"><h2>' +
+      '.</h1><p class="lead">Your request is saved. Send these details to our salon on WhatsApp to arrange confirmation. Your appointment is not confirmed yet.</p><div class="booking-panel"><h2>' +
       esc(dateLabel(d.date)) +
       " · " +
       esc(timeLabel(d.time)) +
@@ -66,7 +67,7 @@ export function renderSimpleBooking(
       esc(selected?.name) +
       "</p><strong>" +
       esc(d.reference) +
-      '</strong></div><button class="btn" id="new-request">New request</button></section>';
+      '</strong></div><p><a class="btn" id="send-booking-whatsapp" href="' + esc(whatsappBookingUrl({ ...d, branch: locations[d.loc].name, service: selected?.group + " / " + selected?.name, price: money(selected?.price) })) + '" target="_blank" rel="noopener noreferrer">Send booking on WhatsApp ↗</a></p><p class="small mute">WhatsApp opens a prepared message. Press Send there; nothing is sent automatically.</p><button class="btn sec" id="new-request">New request</button></section>';
     app.querySelector("#new-request").onclick = () => {
       Object.keys(d).forEach((k) => delete d[k]);
       rerender();
@@ -162,7 +163,7 @@ export function renderSimpleBooking(
           "</button>",
       )
       .join("") +
-    '</div><p class="small mute">Preferred start times. Our team confirms availability and service duration before your visit.</p></div><div class="booking-panel booking-details"><div class="booking-section-label"><span>03</span><h2>Your appointment</h2></div><div class="field"><label for="booking-service">Service</label><select id="booking-service"><option value="">Select a service</option>' +
+    '</div><p class="small mute">Preferred start times only, not live availability. The salon confirms capacity, duration and your appointment on WhatsApp.</p></div><div class="booking-panel booking-details"><div class="booking-section-label"><span>03</span><h2>Your appointment</h2></div><div class="field"><label for="booking-service">Service</label><select id="booking-service"><option value="">Select a service</option>' +
     options +
     "</select></div>" +
     (selected ? referenceMarkup(selected) : "") +
@@ -194,7 +195,7 @@ export function renderSimpleBooking(
     (runtime.bookingEnabled
       ? ""
       : '<p class="small mute">Online setup is in progress. Call or WhatsApp to book now.</p>') +
-    '<a class="booking-whatsapp" href="https://wa.me/918123729873" target="_blank" rel="noopener">Book on WhatsApp ↗</a></div></div></form></section>';
+    '<a id="booking-whatsapp-enquiry" class="booking-whatsapp" href="https://wa.me/918123729873" target="_blank" rel="noopener">Book on WhatsApp ↗</a></div></div></form></section>';
   const $ = (s) => app.querySelector(s);
   $("#month-prev").onclick = () => {
     d.calendar = new Date(Date.UTC(year, month - 2, 1))
@@ -238,6 +239,12 @@ export function renderSimpleBooking(
     };
   $("#contact-consent").onchange = (e) => {
     d.contactConsent = e.target.checked;
+  };
+  const enquiry = $("#booking-whatsapp-enquiry");
+  enquiry.onclick = () => {
+    enquiry.href = whatsappBookingUrl({ ...d, branch: locations[d.loc].name,
+      service: selected ? selected.group + " / " + selected.name : "",
+      price: selected ? money(selected.price) : "" });
   };
   mountChallenge();
   $("#simple-booking").onsubmit = async (e) => {
@@ -321,3 +328,4 @@ export function renderSimpleBooking(
     }
   };
 }
+

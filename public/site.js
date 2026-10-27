@@ -2029,7 +2029,7 @@ R.home = (app) => {
     <a class="door s" href="#sobha-arcadia" data-go="sobha-arcadia">${im("salonA")}<div class="cap" style="color:var(--gold-text)">Thanisandra</div><h3>Sobha Arcadia</h3><p style="margin-top:10px;max-width:34ch;color:rgba(243,237,225,.82)">${LOC.s.door}.</p><div class="m"><span>Thanisandra Main Road</span><span>Sobha City · Hegde Nagar</span></div><span class="go">Enter this salon</span></a>
     <a class="door p" href="#prestige-tech-forest" data-go="prestige-tech-forest">${im("salonE")}<div class="cap" style="color:var(--plat-text)">Varthur</div><h3>Prestige Tech Forest</h3><p style="margin-top:10px;max-width:34ch;color:rgba(243,237,225,.82)">${LOC.p.door}.</p><div class="m"><span>Lake Road, Varthur</span><span>On the campus</span></div><span class="go">Enter this salon</span></a></div></section>
 
-  <section class="blk"><div class="wrap">${sectionHead("Everything, under one roof.", "Twelve services. Tap one to see what happens in the chair, how long it takes and how to keep it.", `<a class="link" href="#services" data-go="services">All services</a>`)}
+  <section class="blk"><div class="wrap">${sectionHead("Everything, under one roof.", "Explore hair, grooming and beauty services. See the full menu for service options and prices.", `<a class="link" href="#services" data-go="services">All services</a>`)}
     ${svcTiles(SVC, 8)}</div></section>
 
   <section class="blk alt"><div class="wrap">
@@ -2078,8 +2078,7 @@ R.home = (app) => {
   <section class="blk"><div class="wrap">${sectionHead("Something coming up?", "Choose the moment. We show you what to book, and when.", `<a class="link" href="#occasions" data-go="occasions">All nine occasions</a>`)}
     <div class="hs">${OCC.map((o) => tile("occasion-" + o.id, o.img, o.t, o.q)).join("")}</div></div></section>
 
-  <section class="blk alt"><div class="wrap">${sectionHead("What clients say.", "Our sister salons in the same neighbourhoods, in numbers. Client words for these two salons start after launch.", `<a class="link" href="#voices" data-go="voices">Voices</a>`)}
-    ${CONFIG.branded ? `<div class="proof">${NEARBY.map((n) => `<div><div class="big">${n[2].toFixed(1)}<small>★</small></div><b>${n[3].toLocaleString("en-IN")} Google reviews</b><span class="small mute">${B} ${n[0]}<br>${n[1]}</span></div>`).join("")}</div><p class="small mute" style="margin:12px 0 34px">${tag("v")} Google Maps, 10 October 2026. Existing outlets, not these two salons.</p>` : ""}
+  <section class="blk alt"><div class="wrap">${sectionHead("What clients say.", "Feedback from these two salons will be added after launch, with customer permission.", `<a class="link" href="#voices" data-go="voices">Voices</a>`)}
     ${voiceBlock()}</div></section>
 
   <section class="blk"><div class="wrap grid g2" style="gap:clamp(28px,5vw,80px);align-items:center">
@@ -2558,9 +2557,8 @@ R.occasion.title = (id) => OCC.find((x) => x.id === id).t;
 
 /* ---------- VOICES ---------- */
 R.voices = (app) => {
-  app.innerHTML = `${innerHero("blondepair", { colour: true, crumb: `<a href="#home" data-go="home">${esc(B)}</a> / Voices`, h1: "What clients say.", lead: "The nearest proof is a short walk away. Words from clients of these two salons start after launch." })}
-  ${CONFIG.branded ? `<section class="blk"><div class="wrap">${sectionHead("Our sister salons, in the same neighbourhoods.", "Public Google ratings for existing outlets near each location.")}<div class="proof">${NEARBY.map((n) => `<div><div class="big">${n[2].toFixed(1)}<small>★</small></div><b>${n[3].toLocaleString("en-IN")} Google reviews</b><span class="small mute">${B} ${n[0]}<br>${n[1]}</span></div>`).join("")}</div><p class="small mute" style="margin-top:14px">${tag("v")} Google Maps, 10 October 2026. These are existing outlets, not the two new salons. New salon profiles start at zero and are never shown with borrowed ratings.</p></div></section>` : ""}
-  <section class="blk alt"><div class="wrap">${sectionHead("In their words.", "The layout clients will see. Each card carries the service, the salon and, with permission, a first name.")}
+  app.innerHTML = `${innerHero("blondepair", { colour: true, crumb: `<a href="#home" data-go="home">${esc(B)}</a> / Voices`, h1: "What clients say.", lead: "Feedback from Sobha Arcadia and Prestige Tech Forest will be published with customer permission." })}
+  <section class="blk alt"><div class="wrap">${sectionHead("In their words.", "Customer reviews will appear here when available. No sample reviews are presented as real feedback.")}
     <div class="vq">${(CONFIG.sampleVoices ? SAMPLE_VOICES : []).map((v) => `<figure class="q" style="margin:0"><span class="stamp">Sample wording. Replace after launch.</span><p>“${v[0]}”</p><small>${v[1]} · ${LOC[v[2]].name}</small></figure>`).join("")}</div></div></section>
   <section class="blk"><div class="wrap grid g2" style="gap:clamp(28px,5vw,80px);align-items:center"><div class="stack" style="gap:22px"><div class="cap">How reviews work here</div><h2 style="font-size:clamp(30px,4.2vw,56px)">Your feedback matters.</h2><p class="lead">Share honest feedback with the salon team. Automated review requests are not active; ask staff where to leave a public review.</p><a class="link" href="#aftercare" data-go="aftercare">The aftercare loop</a></div>${pic("salonC", "r-32")}</div></section>${ctaBand()}`;
 };
