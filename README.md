@@ -14,6 +14,16 @@ Public salon website, appointment requests and staff CRM for Sobha Arcadia and P
 
 GitHub -> Cloudflare Worker + static assets -> Supabase PostgreSQL/Auth.
 
+## Public pages and SEO
+
+Public pages now use clean URLs such as `/services`, `/book`, `/salons/sobha-arcadia` and `/salons/prestige-tech-forest`. Existing hash links are translated in the browser, including service-selection queries. Navigation supports browser back/forward and direct refresh.
+
+`npm run build` renders the current page functions into `dist/` using linkedom. Cloudflare runs this build before local development and deployment. Generated HTML contains actual page content, unique titles/descriptions, canonical URLs, Open Graph metadata and JSON-LD. Edit source files under `public/`, never generated `dist/` files. No backend credentials are needed for the build. Interactive booking still requires the runtime configuration and customer consent.
+
+The generated `/sitemap.xml` lists public indexable pages; `/robots.txt` points to it. Booking, the interactive quiz, placeholder review content and individual stylist archetypes have `noindex,follow`. Admin pages have a noindex response header, and unknown paths return a real 404. Submit the sitemap in the client's Google Search Console after domain ownership is verified there. Indexing and rankings remain Google's decision.
+
+Branch structured data reuses the existing published contact, hours and addresses. Confirm the exact shop/unit addresses and map pins with the client before relying on them in Google Business Profile. No review scores or named staff are invented.
+
 Customer data is stored in Supabase. Public clients cannot read bookings. Worker service credentials are used only for narrow booking/rate-limit database functions. Staff APIs pass the authenticated staff JWT to database policies. Privileged keys never enter the browser.
 
 ## Requirements

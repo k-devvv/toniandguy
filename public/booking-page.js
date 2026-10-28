@@ -32,7 +32,7 @@ export function renderSimpleBooking(
     g.items.map((i, si) => ({ ...i, key: gi + "-" + si, group: g.name })),
   );
   const query = new URLSearchParams(
-    window.location.hash.split("?")[1] || "",
+    window.location.search || window.location.hash.split("?")[1] || "",
   ).get("service");
   if (query && query !== d.queryService) {
     d.item = query;
@@ -312,7 +312,7 @@ export function renderSimpleBooking(
     try {
       const result = await sendBooking(payload);
       d.reference = result.reference;
-      if (window.location.hash.startsWith("#book")) rerender();
+      if (window.location.pathname === "/book" || window.location.hash.startsWith("#book")) rerender();
     } catch (err) {
       error.textContent = err.message;
       d.botToken = "";

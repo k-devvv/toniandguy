@@ -36,7 +36,7 @@ export function renderMenuCard(app) {
                 first = available[0],
                 firstIndex = group.items.indexOf(first);
               return (
-                '<div class="pdf-menu-row"><a class="menu-row-picture" href="#book?service=' +
+                '<div class="pdf-menu-row"><a class="menu-row-picture" href="/book?service=' +
                 gi +
                 "-" +
                 firstIndex +
@@ -44,7 +44,7 @@ export function renderMenuCard(app) {
                 esc(row.name) +
                 '">' +
                 referenceMarkup({ ...first, group: group.name }, true) +
-                '</a><a class="menu-row-name" href="#book?service=' +
+                '</a><a class="menu-row-name" href="/book?service=' +
                 gi +
                 "-" +
                 firstIndex +
@@ -59,7 +59,7 @@ export function renderMenuCard(app) {
                       (i) => i.rowIndex === ri && i.variantIndex === vi,
                     );
                     return (
-                      '<a class="menu-row-price" href="#book?service=' +
+                      '<a class="menu-row-price" href="/book?service=' +
                       gi +
                       "-" +
                       index +

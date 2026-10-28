@@ -1,4 +1,5 @@
 import { renderSimpleBooking, renderPrices } from "./booking-page.js";
+import { routeToPath, pathToRoute, normalizeLinks, applyPageMetadata } from "./seo.js";
 import {
   normalizePhone,
   preferredDays,
@@ -1792,15 +1793,21 @@ const NAV = [
 ];
 let curLoc = ["s", "p"].includes(store("loc")) ? store("loc") : "";
 function parseRoute() {
-  const h = (location.hash || "#home").slice(1).split("?")[0];
+  const h = pathToRoute(location.pathname) || "not-found";
   if (R[h]) return [h, null];
   const m = h.match(/^(service|colour|stylist|occasion)-(.+)$/);
   if (m && R[m[1]] && R[m[1]].ok(m[2])) return [m[1], m[2]];
-  return ["home", null];
+  return ["not-found", null];
+}
+function migrateLegacyHash() {
+  const path = routeToPath(location.hash);
+  if (path) history.replaceState(null, "", path);
 }
 function go(id) {
-  if (location.hash === "#" + id) render();
-  else location.hash = id;
+  const path = routeToPath(id);
+  if (!path) return;
+  if (location.pathname + location.search !== path) history.pushState(null, "", path);
+  render();
 }
 function locOf(id) {
   return id === "sobha-arcadia"
@@ -1848,10 +1855,11 @@ function render() {
   scrollTo(0, 0);
   const t =
     typeof R[id].title === "function" ? R[id].title(arg) : R[id].title || id;
-  document.title =
-    id === "home"
-      ? B + " Bengaluru | Sobha Arcadia and Prestige Tech Forest"
-      : t + " | " + B;
+  applyPageMetadata(document, arg ? id + "-" + arg : id, {
+    title: t,
+    description: id === "service" ? SMAP[arg].what : $(".lead", app)?.textContent || "",
+  });
+  normalizeLinks(document);
 }
 function onScroll() {
   const hd = $(".hd");
@@ -1859,10 +1867,16 @@ function onScroll() {
   if (!hd.classList.contains("pg")) hd.classList.toggle("solid", scrollY > 60);
 }
 addEventListener("scroll", onScroll, { passive: true });
-addEventListener("hashchange", render);
+addEventListener("hashchange", () => { migrateLegacyHash(); render(); });
+addEventListener("popstate", render);
 document.addEventListener("click", (e) => {
-  const a = e.target.closest("[data-go]");
-  if (!a) return;
+  const a = e.target.closest("a");
+  if (!a || e.defaultPrevented || e.button > 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target === "_blank" || a.hasAttribute("download")) return;
+  const href = a.getAttribute("href") || "";
+  const clean = href.startsWith("#") ? routeToPath(href) : href;
+  const target = clean ? new URL(clean, location.href) : null;
+  const route = target?.origin === location.origin ? pathToRoute(target.pathname) : null;
+  if (!route) return;
   e.preventDefault();
   if (a.dataset.prefill) {
     const p = JSON.parse(a.dataset.prefill);
@@ -1872,12 +1886,15 @@ document.addEventListener("click", (e) => {
       S.col.sample = CMAP[p.fam].sample;
     } else S.book = { step: 0, ...p };
   }
-  go(a.dataset.go);
+  go(route + target.search);
 });
 
 /* ---------- shell ---------- */
 const logoHTML = `${esc(B)}<i>Bengaluru</i>`;
 function shell() {
+  // Static HTML is visible before JS loads; replace its shell once to bind interactions.
+  document.querySelectorAll("body > header.hd,body > main#app,body > footer.ft,body > .float").forEach(el => el.remove());
+  $("#app")?.remove();
   document.body.insertAdjacentHTML(
     "afterbegin",
     `
@@ -1916,6 +1933,7 @@ function shell() {
         .join("")}</div>`,
     );
     $(".menu-b").setAttribute("aria-expanded", "true");
+    normalizeLinks(document);
   });
   document.addEventListener("click", (e) => {
     const b = e.target.closest("[data-act]");
@@ -2087,6 +2105,7 @@ R.home = (app) => {
 
   ${ctaBand()}`;
   /* film */
+  if (globalThis.__BUILD_SEO__) return;
   const reels = $$(".reel"),
     bars = $$("#bars i");
   let idx = 0;
@@ -2234,6 +2253,7 @@ R["colour-room"] = (app) => {
       <p class="note">${tag("c")} A concept preview, not a prediction. Real results depend on your hair colour, history and condition. The stylist confirms what suits you in the consultation.</p>
       <div class="row"><a class="btn" id="bk" href="#book" data-go="book">Book a colour consultation</a><a class="btn sec" id="fp" href="#colour-${C.fam}" data-go="colour-${C.fam}">About this family</a></div></div></div></div></section>
   <section class="blk alt"><div class="wrap">${sectionHead("The six families.", "")}<div class="tiles">${COL.map((c) => tile("colour-" + c.id, c.img, c.n, "Colour family")).join("")}</div></div></section>${ctaBand()}`;
+  if (globalThis.__BUILD_SEO__) return;
   const T = new Tryon($("#stage"), { edit: true });
   let mineLoaded = false;
   const apply = () => {
@@ -2461,7 +2481,7 @@ R["find-your-look"] = (app) => {
     return;
   }
   app.innerHTML = `<section class="blk" style="padding-top:clamp(110px,14vw,160px)"><div class="wrap qz"><div class="prog" aria-hidden="true">${QZ.map((_, i) => `<i class="${i <= S.qi ? "on" : ""}"></i>`).join("")}</div>
-    <div class="cap">Question ${S.qi + 1} of ${QZ.length}</div><h2 style="margin-top:14px;font-size:clamp(34px,5vw,64px)">${q.q}</h2><div class="opts" role="group" aria-label="${q.q}">${q.o.map((o) => `<button class="chip" data-v="${o[0]}" aria-pressed="${S.quiz[q.k] === o[0]}">${o[1]}</button>`).join("")}</div>
+    <div class="cap">Question ${S.qi + 1} of ${QZ.length}</div><h1 style="margin-top:14px;font-size:clamp(34px,5vw,64px)">${q.q}</h1><div class="opts" role="group" aria-label="${q.q}">${q.o.map((o) => `<button class="chip" data-v="${o[0]}" aria-pressed="${S.quiz[q.k] === o[0]}">${o[1]}</button>`).join("")}</div>
     <div class="row" style="margin-top:34px">${S.qi > 0 ? '<button class="btn sec sm" id="back">Back</button>' : ""}</div></div></section>`;
   $$(".opts .chip").forEach((b) =>
     b.addEventListener("click", () => {
@@ -2719,7 +2739,28 @@ R.book = (app) =>
 R.book.title = "Reserve an appointment";
 R.services = renderPrices;
 R.services.title = "Services & pricing";
+R["not-found"] = (app) => {
+  app.innerHTML = '<section class="booking-page wrap"><h1>Page not found.</h1><p>This address is unavailable. Explore our services or return to the homepage.</p><a class="btn" href="/">Home</a><a class="btn sec" href="/services">Services</a></section>';
+};
+R["not-found"].title = "Page not found";
+export function staticRouteIds() {
+  return [...Object.keys(R).filter(id => !["service", "colour", "stylist", "occasion", "not-found"].includes(id)),
+    ...SVC.map(s => "service-" + s.id), ...Object.keys(CMAP).map(id => "colour-" + id),
+    ...STY.map(s => "stylist-" + s.id), ...OCC.map(o => "occasion-" + o.id)];
+}
+export function renderBuildRoute(settings) {
+  curLoc = "";
+  S.book = { step: 0 };
+  for (const branch of ["s", "p"])
+    if (settings.hours?.[branch]) LOC[branch].getting[3][1] = settings.hours[branch];
+  shell();
+  render();
+}
 /* ---------- boot ---------- */
-shell();
-render();
-loadRuntimeConfig();
+if (!globalThis.__BUILD_SEO__) {
+  migrateLegacyHash();
+  shell();
+  render();
+  new MutationObserver(() => normalizeLinks(document)).observe(document.body, { childList: true, subtree: true });
+  loadRuntimeConfig();
+}
