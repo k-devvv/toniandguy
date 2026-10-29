@@ -4,7 +4,7 @@ test("primary pages have useful HTML without JavaScript, correct metadata and cl
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
   for (const [path, heading] of [["/", "Hair, done properly."], ["/services", "Our menu."], ["/salons/sobha-arcadia", "A proper salon, minutes from home."], ["/salons/prestige-tech-forest", "Sharp before the first meeting."]]) {
-    const response = await page.goto("http://127.0.0.1:8790" + path);
+    const response = await page.goto("http://127.0.0.1:8791" + path);
     expect(response.status()).toBe(200);
     await expect(page.locator("main h1")).toContainText(heading);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://toniandguybangalore.in" + path);

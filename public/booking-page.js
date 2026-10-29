@@ -1,4 +1,5 @@
 import { whatsappBookingUrl } from "./whatsapp-booking.js";
+import { trackAction } from "./analytics.js";
 import { renderMenuCard } from "./menu-card.js";
 import { referenceMarkup } from "./service-images.js";
 import { localDate, normalizePhone, sendBooking } from "./booking-utils.js";
@@ -312,6 +313,10 @@ export function renderSimpleBooking(
     try {
       const result = await sendBooking(payload);
       d.reference = result.reference;
+      if (!d.analyticsCounted) {
+        trackAction("booking_request", d.loc);
+        d.analyticsCounted = true;
+      }
       if (window.location.pathname === "/book" || window.location.hash.startsWith("#book")) rerender();
     } catch (err) {
       error.textContent = err.message;

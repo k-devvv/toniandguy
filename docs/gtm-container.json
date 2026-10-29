@@ -1,0 +1,43 @@
+{
+  "exportFormatVersion": 2,
+  "containerVersion": {
+    "accountId": "6400881306",
+    "containerId": "284175027",
+    "container": {
+      "accountId": "6400881306",
+      "containerId": "284175027",
+      "name": "toniandguybangalore.in",
+      "publicId": "GTM-WV9QPHQ2",
+      "usageContext": [
+        "WEB"
+      ]
+    },
+    "tag": [
+      {
+        "accountId": "6400881306",
+        "containerId": "284175027",
+        "tagId": "3",
+        "name": "GA4 - Consent-based salon measurement",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>\n(function () {\n  var w = window, d = document, id = \"G-MWCQD9CTTC\";\n  if (w.__salonMeasurementStarted || !/^(www\\.)?toniandguybangalore\\.in$/.test(location.hostname)) return;\n  function permitted() {\n    if (navigator.globalPrivacyControl || navigator.doNotTrack === \"1\" || navigator.doNotTrack === \"yes\") return false;\n    try { var c = JSON.parse(localStorage.getItem(\"tg-analytics-consent-v1\")); return c && c.value === \"granted\" && c.expires > Date.now(); } catch (e) { return false; }\n  }\n  if (!permitted()) return;\n  w.__salonMeasurementStarted = true;\n  w.dataLayer = w.dataLayer || [];\n  function gtag() { w.dataLayer.push(arguments); }\n  gtag(\"js\", new Date());\n  gtag(\"config\", id, {send_page_view: false, page_location: \"https://toniandguybangalore.in/\", page_referrer: \"\", page_title: \"TONI&GUY Bengaluru\", allow_google_signals: false, allow_ad_personalization_signals: false});\n  function send(p) {\n    if (!permitted() || !p || p.event !== \"salon_event\" || !/^(page_view|booking_request|whatsapp_click|phone_click|directions_click)$/.test(p.analytics_event)) return;\n    if (typeof p.safe_page_location !== \"string\" || !/^https:\\/\\/toniandguybangalore\\.in\\/[a-z0-9\\/-]*$/.test(p.safe_page_location)) return;\n    gtag(\"event\", p.analytics_event, {send_to: id, page_location: p.safe_page_location, page_title: String(p.safe_page_title || \"TONI&GUY Bengaluru\").slice(0,160), page_referrer: \"\", salon_branch: /^(s|p)$/.test(p.salon_branch) ? p.salon_branch : \"\"});\n  }\n  d.addEventListener(\"salon-analytics\", function (e) { send(e.detail); });\n  var backlog = w.dataLayer.slice();\n  for (var i = 0; i < backlog.length; i++) send(backlog[i]);\n  var script = d.createElement(\"script\"); script.async = true; script.src = \"https://www.googletagmanager.com/gtag/js?id=\" + id; d.head.appendChild(script);\n})();\n</script>"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "supportDocumentWrite",
+            "value": "false"
+          }
+        ],
+        "firingTriggerId": [
+          "2147479573"
+        ],
+        "tagFiringOption": "ONCE_PER_PAGE"
+      }
+    ],
+    "trigger": [],
+    "variable": []
+  }
+}

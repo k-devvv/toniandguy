@@ -1,5 +1,6 @@
 import { renderSimpleBooking, renderPrices } from "./booking-page.js";
 import { routeToPath, pathToRoute, normalizeLinks, applyPageMetadata } from "./seo.js";
+import { initAnalytics, trackPageView } from "./analytics.js";
 import {
   normalizePhone,
   preferredDays,
@@ -1855,11 +1856,12 @@ function render() {
   scrollTo(0, 0);
   const t =
     typeof R[id].title === "function" ? R[id].title(arg) : R[id].title || id;
-  applyPageMetadata(document, arg ? id + "-" + arg : id, {
+  const metadata = applyPageMetadata(document, arg ? id + "-" + arg : id, {
     title: t,
     description: id === "service" ? SMAP[arg].what : $(".lead", app)?.textContent || "",
   });
   normalizeLinks(document);
+  trackPageView(arg ? id + "-" + arg : id, metadata.title);
 }
 function onScroll() {
   const hd = $(".hd");
@@ -2171,6 +2173,16 @@ R.home = (app) => {
 R.home.title = "Home";
 
 /* ---------- LOCATION PAGES ---------- */
+function salonAnswers(L) {
+  return [
+    ["What are the opening hours?", "Open every day, Monday to Sunday, from 10:00 AM to 9:00 PM."],
+    ["Where is this salon?", L.address + ". Use Directions for the map location; call for entrance or parking guidance."],
+    ["How do I book an appointment?", "Choose a service, date and preferred time on the booking page. Save the request and send the prepared WhatsApp message to +91 81237 29873. The salon team confirms availability manually."],
+    ["Does saving my request confirm my appointment?", "No. Your request reference confirms that the request was saved. Wait for confirmation from the salon team before visiting."],
+    ["Where can I find service prices?", "Open the Services menu for listed prices. The salon confirms the final service and price after consultation; prices marked onwards depend on the treatment."],
+    ["Can I arrange a group appointment?", "Call or WhatsApp +91 81237 29873 to discuss a group visit. Availability and timings must be confirmed by the salon."]
+  ];
+}
 function locPage(id) {
   return (app) => {
     const L = LOC[id],
@@ -2178,15 +2190,10 @@ function locPage(id) {
       svcs = SVC.filter((s) => !s.only || s.only === id);
     app.innerHTML = `
     ${innerHero(L.hero, { crumb: `<a href="#home" data-go="home">${esc(B)}</a> / ${L.area}`, h1: L.line, lead: L.sub, ctas: `<a class="btn" href="#book" data-go="book" data-prefill='${JSON.stringify({ loc: id, step: 1 })}'>Reserve at ${L.name}</a><a class="btn on-photo" href="${dir(id)}" target="_blank" rel="noopener">Directions</a>` })}
-    <section class="blk"><div class="wrap grid g2" style="gap:clamp(28px,5vw,80px)"><div class="stack"><div class="cap">The neighbourhood</div><h2 style="font-size:clamp(30px,4.2vw,56px)">Why a salon belongs here.</h2>
-      <div class="facts">${L.facts.map((f) => `<div><span>${f[0]}</span><span class="small mute">${f[1]} ${tag(f[2])}</span></div>`).join("")}</div></div>
-      <div class="stack"><div class="cap">A day around here</div><h2 style="font-size:clamp(30px,4.2vw,56px)">The rhythm of the day.</h2><div class="day">${L.day.map((d) => `<div><b>${d[0]}</b><span class="mute">${d[1]}</span></div>`).join("")}</div><p class="small mute">${tag("i")} Inferred from the neighbourhood. Real booking data replaces it after week four.</p></div></div></section>
-
-    <section class="blk alt"><div class="wrap">${sectionHead("Who walks in.", "Four people we are building the appointment book around.")}
-      <div class="grid g4">${L.who.map((w) => `<div class="stack" style="gap:14px">${pic(w[2], "r-34")}<h3>${w[0]}</h3><p class="mute">${w[1]}</p></div>`).join("")}</div></div></section>
+    <section class="blk"><div class="wrap grid g2" style="gap:clamp(28px,5vw,80px)"><div class="stack"><div class="cap">Your salon</div><h2>${B} ${L.name}, Bengaluru.</h2><p>${esc(L.address)}</p><p>Open every day, 10:00 AM–9:00 PM.</p><p><a href="tel:+918123729873">Call +91 81237 29873</a></p></div><div class="stack"><h2>How to book.</h2><p>Choose this salon, a service, date and preferred time. Save your booking request, then send the prepared WhatsApp message. Our team confirms availability manually. A saved request is not a confirmed appointment.</p><a class="btn" href="#book" data-go="book">Request an appointment</a></div></div></section>
 
     <section class="blk"><div class="wrap grid g2" style="gap:clamp(28px,5vw,80px);align-items:start"><div class="stack" style="gap:22px"><div class="cap">Signature here</div><h2 style="font-size:clamp(30px,4.2vw,56px)">What we do best at ${L.short}.</h2><div class="pill-row">${L.emphasis.map((e) => `<span class="pill">${e}</span>`).join("")}</div>
-      <div class="card" style="margin-top:8px"><b class="cap">Opening offer ${tag("r")}</b><p style="font-size:18px">${L.offer}</p></div></div>
+      <div class="card" style="margin-top:8px"><b class="cap">Before your visit</b><p style="font-size:18px">View the service menu for listed prices. Our team confirms the service, price and availability before your appointment.</p></div></div>
       <div class="stack"><div class="fq">${svcs
         .slice(0, 9)
         .map(
@@ -2199,7 +2206,7 @@ function locPage(id) {
 
     <section class="blk"><div class="wrap grid g2" style="gap:clamp(28px,5vw,80px)"><div class="stack"><div class="cap">Getting here</div><h2 style="font-size:clamp(30px,4.2vw,56px)">Find the door.</h2><div class="facts">${L.getting.map((g) => `<div><b>${g[0]}</b><span class="mute">${g[1]}</span></div>`).join("")}</div><p class="small mute">${esc(L.address)}</p>
       <div class="mapbox">${mapSVG(L)}</div></div>
-      <div class="stack"><div class="cap">Questions</div><div class="fq">${L.faq.map((f) => `<details><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join("")}</div>
+      <div class="stack"><div class="cap">Questions</div><div class="fq">${salonAnswers(L).map((f) => `<details><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join("")}</div>
       <div class="grid" style="grid-template-columns:1fr 1fr;gap:10px;margin-top:10px">${pic(L.photos[0], "r-45")}${pic(L.photos[1], "r-45")}</div></div></div></section>
 
     <section class="blk alt"><div class="wrap row" style="justify-content:space-between;gap:30px"><h2 style="font-size:clamp(30px,4.2vw,56px)">Also in Bengaluru:<br><span class="it">${other.name}.</span></h2><a class="btn sec" href="#${other.slug}" data-go="${other.slug}">See ${other.name}</a></div></section>
@@ -2760,6 +2767,7 @@ export function renderBuildRoute(settings) {
 if (!globalThis.__BUILD_SEO__) {
   migrateLegacyHash();
   shell();
+  initAnalytics(staticRouteIds());
   render();
   new MutationObserver(() => normalizeLinks(document)).observe(document.body, { childList: true, subtree: true });
   loadRuntimeConfig();
