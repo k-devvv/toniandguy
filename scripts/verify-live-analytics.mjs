@@ -1,0 +1,26 @@
+import { chromium } from '@playwright/test';
+import fs from 'node:fs';
+const browser=await chromium.launch();
+const page=await browser.newPage({viewport:{width:390,height:844}});
+const requests=[],failures=[],statuses=[];
+page.on('request',request=>{const url=request.url();if(/google-analytics\.com\/g\/collect|googletagmanager\.com/.test(url))requests.push({url,post:request.postData()});});
+page.on('response',response=>{if(/google-analytics\.com\/g\/collect/.test(response.url()))statuses.push(response.status());});
+page.on('pageerror',error=>failures.push(error.message));
+await page.goto('https://toniandguybangalore.in/services?qa=private-test',{waitUntil:'networkidle'});
+const before=requests.length;
+await page.getByRole('button',{name:'Allow analytics',exact:true}).click();
+await page.waitForTimeout(8000);
+await page.locator('.menu-row-name').first().click();
+await page.waitForTimeout(12000);
+await page.locator('#fdir').click();
+await page.waitForTimeout(12000);
+await page.locator('.float button[data-act="wa"]').click();
+await page.waitForTimeout(12000);
+await page.locator('.float button[data-act="call"]').click();
+await page.waitForTimeout(12000);
+const collects=requests.filter(request=>/google-analytics\.com\/g\/collect/.test(request.url));
+const output={beforeConsentGoogleRequests:before,googleScripts:requests.filter(request=>/googletagmanager\.com/.test(request.url)).map(request=>new URL(request.url).pathname),events:collects.map(request=>{const params=new URL(request.url).searchParams;return {event:params.get('en'),page:params.get('dl'),consent:params.get('gcs'),measurement:params.get('tid'),post:request.post};}),statuses,queryLeak:collects.some(request=>JSON.stringify(request).includes('private-test')),failures};
+fs.writeFileSync('live-analytics-verification.json',JSON.stringify(output,null,2));console.log(JSON.stringify(output,null,2));
+await page.screenshot({path:'../../analytics-live-booking.png',fullPage:false});await browser.close();
+if(before!==0||collects.length<5||output.queryLeak||failures.length||statuses.some(status=>status!==204))process.exitCode=1;
+

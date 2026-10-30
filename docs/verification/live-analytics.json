@@ -1,0 +1,54 @@
+{
+  "beforeConsentGoogleRequests": 0,
+  "googleScripts": [
+    "/gtm.js",
+    "/gtag/js",
+    "/gtag/js"
+  ],
+  "events": [
+    {
+      "event": "page_view",
+      "page": "https://toniandguybangalore.in/services",
+      "consent": "G101",
+      "measurement": "G-MWCQD9CTTC",
+      "post": null
+    },
+    {
+      "event": "page_view",
+      "page": "https://toniandguybangalore.in/book",
+      "consent": "G101",
+      "measurement": "G-MWCQD9CTTC",
+      "post": null
+    },
+    {
+      "event": "directions_click",
+      "page": "https://toniandguybangalore.in/book",
+      "consent": "G101",
+      "measurement": "G-MWCQD9CTTC",
+      "post": null
+    },
+    {
+      "event": "whatsapp_click",
+      "page": "https://toniandguybangalore.in/book",
+      "consent": "G101",
+      "measurement": "G-MWCQD9CTTC",
+      "post": null
+    },
+    {
+      "event": "phone_click",
+      "page": "https://toniandguybangalore.in/book",
+      "consent": "G101",
+      "measurement": "G-MWCQD9CTTC",
+      "post": null
+    }
+  ],
+  "statuses": [
+    204,
+    204,
+    204,
+    204,
+    204
+  ],
+  "queryLeak": false,
+  "failures": []
+}
