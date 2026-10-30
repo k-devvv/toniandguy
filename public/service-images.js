@@ -1,3 +1,4 @@
+import { imageAttributes } from "./media.js";
 import REFERENCES from "./service-image-manifest-v2.json" with { type: "json" };
 const exactReferences = new Map(
   REFERENCES.map((ref) => [ref.group + "|" + ref.name, ref]),
@@ -37,9 +38,7 @@ export function referenceMarkup(service, compact = false) {
     esc(ref.src) +
     '" alt="' +
     esc(ref.alt) +
-    '" loading="' +
-    (compact ? "lazy" : "eager") +
-    '" decoding="async" style="' +
+    '" ' + imageAttributes(ref.src, { priority: !compact }) + ' style="' +
     style +
     '"></div>';
   if (compact) return image;

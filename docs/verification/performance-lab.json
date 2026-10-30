@@ -1,0 +1,16 @@
+[
+  {
+    "origin": "https://toniandguybangalore.in",
+    "lcpMs": 3068,
+    "cls": 0.0016188719497972433,
+    "imageRequests": 36,
+    "imageBytes": 1399429
+  },
+  {
+    "origin": "http://127.0.0.1:8792",
+    "lcpMs": 600,
+    "cls": 0.0015978414680712476,
+    "imageRequests": 12,
+    "imageBytes": 443069
+  }
+]

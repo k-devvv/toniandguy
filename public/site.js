@@ -1,3 +1,4 @@
+import { imageAttributes } from "./media.js";
 import { renderSimpleBooking, renderPrices } from "./booking-page.js";
 import { routeToPath, pathToRoute, normalizeLinks, applyPageMetadata } from "./seo.js";
 import { initAnalytics, trackPageView } from "./analytics.js";
@@ -1232,7 +1233,7 @@ const IMG = {
   },
   blondepair: {
     u: "/assets/8c6bc8da6e3f8a76.webp",
-    a: "Two women with long wavy blonde hair seen from behind",
+    a: "Long wavy blonde hair seen from behind",
     w: 800,
     h: 800,
   },
@@ -1520,7 +1521,7 @@ const tag = (k) => `<span class="tag ${k}">${TAGS[k]}</span>`;
 const src = (k) => (IMG[k] || SAMPLES[k]).u;
 const alt = (k) => (IMG[k] || SAMPLES[k]).a;
 const im = (k, extra = "") =>
-  `<img src="${src(k)}" alt="${esc(alt(k))}" decoding="async" ${extra}>`;
+  `<img src="${src(k)}" alt="${esc(alt(k))}" ${imageAttributes(src(k), { priority: extra.includes('fetchpriority="high"') })} ${extra}>`;
 const pic = (k, cls = "", cap = "") =>
   `<figure class="ph ${cls}">${im(k)}${cap ? `<figcaption>${cap}</figcaption>` : ""}</figure>`;
 const tile = (go, k, title, sub, prefill) =>
@@ -1906,9 +1907,9 @@ function shell() {
   <main id="app"></main>
   <footer class="ft"><div class="wrap"><div class="cols">
     <div class="stack"><div class="logo" style="font-size:30px">${logoHTML}</div><p class="mute" style="max-width:34ch">Two new salons for people who take their hair seriously. Thanisandra and Varthur.</p></div>
-    <div><h4>Salons</h4><a href="#sobha-arcadia" data-go="sobha-arcadia">Sobha Arcadia</a><a href="#prestige-tech-forest" data-go="prestige-tech-forest">Prestige Tech Forest</a><a href="#visit" data-go="visit">Directions and hours</a><a href="#book" data-go="book">Reserve</a></div>
-    <div><h4>Explore</h4><a href="#services" data-go="services">Services</a><a href="#colour-room" data-go="colour-room">Colour room</a><a href="#find-your-look" data-go="find-your-look">Find your look</a><a href="#stylists" data-go="stylists">Find your stylist</a><a href="#occasions" data-go="occasions">Occasions</a></div>
-    <div><h4>The house</h4><a href="#standard" data-go="standard">The standard</a><a href="#voices" data-go="voices">Voices</a><a href="#aftercare" data-go="aftercare">Aftercare</a><a href="/privacy.html">Privacy</a><a href="/admin/">Staff login</a></div></div>
+    <div><h2 style="font-size:19px">Salons</h2><a href="#sobha-arcadia" data-go="sobha-arcadia">Sobha Arcadia</a><a href="#prestige-tech-forest" data-go="prestige-tech-forest">Prestige Tech Forest</a><a href="#visit" data-go="visit">Directions and hours</a><a href="#book" data-go="book">Reserve</a></div>
+    <div><h2 style="font-size:19px">Explore</h2><a href="#services" data-go="services">Services</a><a href="#colour-room" data-go="colour-room">Colour room</a><a href="#find-your-look" data-go="find-your-look">Find your look</a><a href="#stylists" data-go="stylists">Find your stylist</a><a href="#occasions" data-go="occasions">Occasions</a></div>
+    <div><h2 style="font-size:19px">The house</h2><a href="#standard" data-go="standard">The standard</a><a href="#voices" data-go="voices">Voices</a><a href="#aftercare" data-go="aftercare">Aftercare</a><a href="/privacy.html">Privacy</a><a href="/admin/">Staff login</a></div></div>
     <p class="fine">Branch contacts, hours and service prices are confirmed by the salon. Illustrative photography is shown pending the branch photo shoot. Colour previews are concepts, not predictions: a stylist confirms what suits your hair. Photos you add in the Colour room stay in your browser and are never uploaded.</p></div></footer>
   <div class="float" aria-label="Quick actions"><a class="btn" href="#book" data-go="book">Reserve</a><button class="btn sec" data-act="wa">WhatsApp</button><button class="btn sec" data-act="call">Call</button><a class="btn sec" id="fdir" target="_blank" rel="noopener">Directions</a></div>`,
   );
@@ -2025,7 +2026,7 @@ const SCENE_MS = 6400;
 R.home = (app) => {
   app.innerHTML = `
   <section class="hero" id="hero" aria-label="Introduction">
-    <div class="film" aria-hidden="true">${[0, 1, 2].map((c) => `<div class="reel">${SCENES.map((s, i) => `<img data-s="${i}" class="${i === 0 ? "on" : ""}" src="${src(s.imgs[c])}" alt="" decoding="async">`).join("")}</div>`).join("")}</div>
+    <div class="film" aria-hidden="true">${[0, 1, 2].map((c) => `<div class="reel">${SCENES.map((s, i) => `<img data-s="${i}" class="${i === 0 ? "on" : ""}" ${i === 0 ? `src="${src(s.imgs[c])}"` : `data-src="${src(s.imgs[c])}"`} alt="" ${imageAttributes(src(s.imgs[c]), { priority: i === 0 && c === 1 })} ${i === 0 && c === 1 ? 'fetchpriority="high"' : ""}>`).join("")}</div>`).join("")}</div>
     <div class="vig"></div>
     <div class="wrap hero-in">
       <div class="cap" style="color:var(--gold-text)">${esc(B)} · Thanisandra · Varthur · Bengaluru</div>
@@ -2041,7 +2042,7 @@ R.home = (app) => {
   <div class="marq" aria-hidden="true"><div>${[1, 2].map(() => ["Precision cutting", "Bespoke colour", "Balayage", "Smoothening", "Gentlemen's grooming", "Restorative spa", "Bridal and occasion", "Family appointments"].map((t) => `<span>${t}</span>`).join("")).join("")}</div></div>
 
   <section class="blk"><div class="wrap grid g2" style="align-items:center;gap:clamp(28px,6vw,96px)">
-    <div class="stack" style="gap:28px"><div class="cap">The first twenty minutes</div><p class="statement">We do not start with scissors. We start with <em>questions</em>.</p>
+    <div class="stack" style="gap:28px"><div class="cap">The first twenty minutes</div><h2 class="statement">We do not start with scissors. We start with <em>questions</em>.</h2>
       <p class="lead">Your routine, your hair history, the week ahead. Then a plan you have seen, tried and agreed to before we begin. That is the whole difference.</p><a class="link" href="#standard" data-go="standard">The standard</a></div>
     ${pic("scissors", "r-45")}</div></section>
 
@@ -2116,6 +2117,7 @@ R.home = (app) => {
     reels.forEach((r, c) =>
       $$("img", r).forEach((m) => {
         const on = +m.dataset.s === idx;
+        if (on && m.dataset.src) { m.src = m.dataset.src; delete m.dataset.src; }
         m.classList.toggle("on", on);
         m.style.filter = SCENES[+m.dataset.s].col
           ? "contrast(1.05) brightness(.8)"
@@ -2229,7 +2231,7 @@ R.service = (app, id) => {
   const s = SMAP[id],
     rel = s.rel.map((r) => SMAP[r]);
   app.innerHTML = `${innerHero(s.img, { colour: s.kind === "colour" || s.kind === "refresh", crumb: `<a href="#services" data-go="services">Services</a> / ${s.tag}`, h1: s.name, lead: s.what, ctas: `<a class="btn" href="#book" data-go="book" data-prefill='${JSON.stringify({ svc: s.id, step: 1 })}'>Reserve this</a>${s.kind === "colour" || s.kind === "refresh" ? '<a class="btn on-photo" href="#colour-room" data-go="colour-room">Try colours</a>' : `<a class="btn on-photo" href="#stylist-${s.stylist}" data-go="stylist-${s.stylist}">Meet the specialist</a>`}` })}
-  <section class="blk"><div class="wrap grid g2" style="gap:clamp(28px,5vw,80px)"><div class="stack" style="gap:26px"><div class="cap">What happens in the chair</div><div class="steps3" style="grid-template-columns:1fr">${s.exp.map((e, i) => `<div><div class="n">${i + 1}</div><h3 style="font-size:24px">${e}</h3></div>`).join("")}</div></div>
+  <section class="blk"><div class="wrap grid g2" style="gap:clamp(28px,5vw,80px)"><div class="stack" style="gap:26px"><h2 class="cap">What happens in the chair</h2><div class="steps3" style="grid-template-columns:1fr">${s.exp.map((e, i) => `<div><div class="n">${i + 1}</div><h3 style="font-size:24px">${e}</h3></div>`).join("")}</div></div>
     <div class="stack" style="gap:26px">${pic(s.img2, "r-45 col")}<dl class="kv"><dt>Who it suits</dt><dd>${s.who}</dd><dt>What you get</dt><dd>${s.gets}</dd><dt>Time</dt><dd>${s.timeTxt}</dd><dt>Upkeep</dt><dd>${s.maint}</dd><dt>Expect</dt><dd>${s.expect}</dd><dt>Aftercare</dt><dd>${s.after}</dd></dl>
     <p class="note">${tag("c")} Typical times and upkeep. Your hair history changes them, and the stylist confirms in the consultation.</p></div></div></section>
   <section class="blk alt"><div class="wrap">${sectionHead("Pairs well with.", "")}<div class="grid g3">${rel.map((r) => `<a class="pcard" href="#service-${r.id}" data-go="service-${r.id}">${pic(r.img, "r-32")}<h3>${r.name}</h3><span class="small mute">${r.timeTxt}</span></a>`).join("")}</div></div></section>
@@ -2528,7 +2530,7 @@ R.stylists = (app) => {
     )
     .join("")}</div>
     <p class="note">${tag("c")} Profile format. These are specialist types, not named people. Each becomes a real team member with a name, portfolio and live availability once the team is confirmed. Levels follow the brand's ladder.</p>
-    <div class="grid g3">${list
+    <h2 class="cap">Stylist specialities</h2><div class="grid g3">${list
       .map(
         (
           t,
@@ -2570,7 +2572,7 @@ R.occasion = (app, id) => {
   const o = OCC.find((x) => x.id === id),
     svcs = o.svc.map((s) => SMAP[s]);
   app.innerHTML = `${innerHero(o.img, { colour: true, crumb: `<a href="#occasions" data-go="occasions">Occasions</a>`, h1: o.t + ".", lead: o.q, ctas: `<a class="btn" href="#book" data-go="book" data-prefill='${JSON.stringify({ occ: o.id, svc: o.svc[0], step: 1 })}'>Plan this</a>` })}
-  <section class="blk"><div class="wrap grid g2" style="gap:clamp(28px,5vw,80px)"><div class="stack" style="gap:24px"><div class="cap">The countdown</div><div class="steps3" style="grid-template-columns:1fr">${o.cd.map((c) => `<div><div class="cap">${c[0]}</div><h3 style="font-size:26px">${c[1]}</h3></div>`).join("")}</div></div>
+  <section class="blk"><div class="wrap grid g2" style="gap:clamp(28px,5vw,80px)"><div class="stack" style="gap:24px"><h2 class="cap">The countdown</h2><div class="steps3" style="grid-template-columns:1fr">${o.cd.map((c) => `<div><div class="cap">${c[0]}</div><h3 style="font-size:26px">${c[1]}</h3></div>`).join("")}</div></div>
     <div class="stack" style="gap:24px"><dl class="kv"><dt>You need</dt><dd>${o.need}</dd><dt>The experience</dt><dd>${o.exp}</dd><dt>The result</dt><dd style="font-family:var(--display);font-style:italic;font-size:22px;line-height:1.3">${o.res}</dd></dl></div></div></section>
   <section class="blk alt"><div class="wrap">${sectionHead("What to book.", "")}<div class="grid g3">${svcs.map((s) => `<a class="pcard" href="#service-${s.id}" data-go="service-${s.id}">${pic(s.img, "r-32")}<h3>${s.name}</h3><span class="small mute">${s.timeTxt}</span></a>`).join("")}</div></div></section>
   <section class="blk"><div class="wrap">${sectionHead("Other occasions.", "")}<div class="hs">${OCC.filter(
@@ -2603,7 +2605,7 @@ R.aftercare = (app) => {
         `<button class="chip" data-s="${x.id}" aria-pressed="${x.id === S.loop}">${x.name}</button>`,
     )
     .join("")}</div>
-    <div class="grid g2" style="gap:clamp(28px,5vw,80px)"><div class="stack"><h3>${s.name}: your aftercare card</h3><dl class="kv"><dt>First days</dt><dd>${s.after}</dd><dt>Upkeep</dt><dd>${s.maint}</dd><dt>Next visit</dt><dd>${s.maintLvl ? s.maint : "When you need it"}</dd><dt>Pairs with</dt><dd>${s.rel.map((r) => SMAP[r].name).join(", ")}</dd></dl><p class="note">${tag("c")} Aftercare comes from the stylist for your hair. This card is the starting text.</p></div>
+    <div class="grid g2" style="gap:clamp(28px,5vw,80px)"><div class="stack"><h2 style="font-size:clamp(22px,2.4vw,32px)">${s.name}: your aftercare card</h2><dl class="kv"><dt>First days</dt><dd>${s.after}</dd><dt>Upkeep</dt><dd>${s.maint}</dd><dt>Next visit</dt><dd>${s.maintLvl ? s.maint : "When you need it"}</dd><dt>Pairs with</dt><dd>${s.rel.map((r) => SMAP[r].name).join(", ")}</dd></dl><p class="note">${tag("c")} Aftercare comes from the stylist for your hair. This card is the starting text.</p></div>
       <div class="stack"><h3>Follow-up examples</h3><div class="chat">${LOOP.slice(
         0,
         4,
