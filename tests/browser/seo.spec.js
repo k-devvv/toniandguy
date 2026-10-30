@@ -59,3 +59,17 @@ test("sitemap excludes booking, staff and placeholder reviews", async ({ request
   expect(xml).toContain("/salons/prestige-tech-forest</loc>");
   expect(xml).not.toMatch(/<loc>[^<]*(?:#|\/book|\/admin|\/api|\/voices|\/stylists\/)/);
 });
+
+test('homepage keeps server-rendered heading while attaching interactive controls', async ({page})=>{
+ await page.addInitScript(()=>{
+  const observer=new MutationObserver(()=>{
+   const heading=document.querySelector('main#app h1');
+   if(heading&&!window.initialHomepageHeading)window.initialHomepageHeading=heading;
+  });observer.observe(document,{childList:true,subtree:true});
+ });
+ await page.goto('/');
+ await expect(page.locator('#hstage canvas')).toBeVisible();
+ expect(await page.evaluate(()=>window.initialHomepageHeading===document.querySelector('main#app h1'))).toBe(true);
+ await page.getByRole('link',{name:'Reserve',exact:true}).first().click();
+ await expect(page.locator('#booking-service')).toBeVisible();
+});

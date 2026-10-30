@@ -1819,6 +1819,7 @@ function locOf(id) {
       : "";
 }
 let heroT = null;
+let reuseHomeMarkup = false;
 function render() {
   clearInterval(heroT);
   const [id, arg] = parseRoute(),
@@ -1830,8 +1831,9 @@ function render() {
   document.body.dataset.loc =
     l || (id === "book" || id === "aftercare" ? curLoc : "");
   const app = $("#app");
-  app.innerHTML = "";
+  if (!reuseHomeMarkup) app.innerHTML = "";
   R[id](app, arg);
+  reuseHomeMarkup = false;
   const hd = $(".hd");
   hd.classList.toggle("pg", id !== "home");
   hd.classList.remove("solid");
@@ -1895,6 +1897,7 @@ document.addEventListener("click", (e) => {
 /* ---------- shell ---------- */
 const logoHTML = `${esc(B)}<i>Bengaluru</i>`;
 function shell() {
+  if (!reuseHomeMarkup) {
   // Static HTML is visible before JS loads; replace its shell once to bind interactions.
   document.querySelectorAll("body > header.hd,body > main#app,body > footer.ft,body > .float").forEach(el => el.remove());
   $("#app")?.remove();
@@ -1913,6 +1916,7 @@ function shell() {
     <p class="fine">Branch contacts, hours and service prices are confirmed by the salon. Illustrative photography is shown pending the branch photo shoot. Colour previews are concepts, not predictions: a stylist confirms what suits your hair. Photos you add in the Colour room stay in your browser and are never uploaded.</p></div></footer>
   <div class="float" aria-label="Quick actions"><a class="btn" href="#book" data-go="book">Reserve</a><button class="btn sec" data-act="wa">WhatsApp</button><button class="btn sec" data-act="call">Call</button><a class="btn sec" id="fdir" target="_blank" rel="noopener">Directions</a></div>`,
   );
+  }
   $(".menu-b").addEventListener("click", () => {
     const open = $(".sheet");
     if (open) {
@@ -2024,7 +2028,7 @@ const SCENES = [
 ];
 const SCENE_MS = 6400;
 R.home = (app) => {
-  app.innerHTML = `
+  if (!reuseHomeMarkup) app.innerHTML = `
   <section class="hero" id="hero" aria-label="Introduction">
     <div class="film" aria-hidden="true">${[0, 1, 2].map((c) => `<div class="reel">${SCENES.map((s, i) => `<img data-s="${i}" class="${i === 0 ? "on" : ""}" ${i === 0 ? `src="${src(s.imgs[c])}"` : `data-src="${src(s.imgs[c])}"`} alt="" ${imageAttributes(src(s.imgs[c]), { priority: i === 0 && c === 1 })} ${i === 0 && c === 1 ? 'fetchpriority="high"' : ""}>`).join("")}</div>`).join("")}</div>
     <div class="vig"></div>
@@ -2768,6 +2772,7 @@ export function renderBuildRoute(settings) {
 /* ---------- boot ---------- */
 if (!globalThis.__BUILD_SEO__) {
   migrateLegacyHash();
+  reuseHomeMarkup = location.pathname === "/" && !!document.querySelector("main#app h1");
   shell();
   initAnalytics(staticRouteIds());
   render();
